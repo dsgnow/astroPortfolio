@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500&display=swap&subset=latin-ext');
+/* font-family: 'Oswald', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap&subset=latin-ext');
+/* font-family: 'Roboto', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+
+/* font-family: 'Indie Flower', cursive; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+body {
+  font-size: 10px;
+  overflow-x: hidden;
+  height: 300vh
+}
+
+@import "susy";
+@import "compass/reset";
+
+.stars,
+.starsAll,
+.twinkling,
+.clouds {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.starsAll {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -99900;
+}
+
+.stars {
+  z-index: 0;
+  background: #000 url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
+}
+
+.starsAll {
+  z-index: -10;
+  background: #000 url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
+}
+
+.twinkling {
+  z-index: -44;
+  background: transparent url('https://image.ibb.co/ir1DE8/twinkling.png') repeat top center;
+  animation: move-twink-back 200s linear infinite;
+}
+
+.clouds {
+  z-index: -2;
+  background: transparent url('https://image.ibb.co/bT4N7T/clouds.png') repeat top center;
+  animation: move-clouds-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+@keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+@keyframes astronautHeader {
+
+  100% {
+    transform: translate(10%, 8%);
+  }
+}
+
+@keyframes circleOut {
+
+  80% {
+    transform: scale(3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
+
+.white {
+  color: white !important;
+}
+
+.bgcTrans {
+  background-color: transparent !important;
+}
+
+
+
+header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.animationAstronaut {
+  position: relative;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: -3;
+  background-color: black;
+  width: 91vw;
+  height: 91vw;
+  border-radius: 50%;
+}
+
+
+.animationAstronaut .astronaut {
+  top: 28%;
+  right: 7%;
+  position: absolute;
+  height: 40%;
+  animation: astronautHeader 3s ease-in-out infinite;
+  animation-direction: alternate-reverse;
+  z-index: 990;
+}
+
+.animationAstronaut .circle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vw;
+  position: absolute;
+  z-index: 991;
+  opacity: 1;
+}
+
+
+.animationCircleOut {
+  animation: circleOut 4s forwards;
+}
+
+.animationAstronaut .earth {
+  top: 20%;
+  left: 14%;
+  position: absolute;
+  height: 25%;
+}
+
+
+.journey {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  font-family: 'Oswald', sans-serif;
+  font-size: 60px;
+  white-space: nowrap;
+  color: black;
+  transition: 3s ease-in-out;
+}
+
+.front {
+  position: absolute;
+  top: 115px;
+  left: 50%;
+  transform: translate(-50%, -15%);
+  font-family: 'Indie Flower', cursive;
+  color: black;
+  font-size: 22px;
+  white-space: nowrap;
+  transition: 3s ease-in-out;
+}
+
+button.buttonBig {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 150px;
+  height: 45px;
+  font-size: 18px;
+  font-family: 'Oswald', sans-serif;
+  border: 1px solid #ef4c23;
+  border-radius: 25px;
+  letter-spacing: 2px;
+  background-color: white;
+  color: black;
+  transition: .5s ease-in-out;
+  outline: none;
+  cursor: pointer;
+}
+
+ul.leftMenu {
+  display: none;
+}
+
+nav {
+  position: fixed;
+  background-color: transparent;
+  width: 100%;
+  height: 50px;
+  z-index: 999999;
+}
+
+
+.hamburger {
+  height: 31px;
+  width: 70px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: black;
+}
+
+.hamburger p {
+  position: absolute;
+  top: 7px;
+  right: 6px;
+  color: white;
+  padding: 0 30px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: lowercase;
+  transition: .3s;
+}
+
+.hamburger i {
+  position: absolute;
+  right: 14px;
+  top: 8px;
+  font-size: 16px;
+  color: white;
+  transition: .3s;
+}
+
+
+.hamburger:hover i,
+p {
+  background-color: c5c6c7;
+  color: #ef4c23;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
+
+@media (min-width: 320px) and (orientation: portrait) {}
+
+@media (min-width: 320px) and (min-height: 700px) {}
+
+
+@media (min-width: 768px) and (orientation: portrait) {
+
+
+  .journey {
+    top: 10%;
+    font-size: 100px;
+  }
+
+  .front {
+    top: 21%;
+    font-size: 40px;
+  }
+
+  button.buttonBig {
+    top: 33%;
+    width: 300px;
+    height: 65px;
+    font-size: 32px;
+    border: 2px solid #ef4c23;
+    letter-spacing: 2px;
+  }
+
+
+
+
+  nav {
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    right: 0;
+  }
+
+  .hamburger {
+    width: 200px;
+    height: 70px;
+    line-height: 70px;
+    background-color: black;
+  }
+
+  .hamburger p {
+    top: 0;
+    right: 30px;
+    line-height: 70px;
+    padding: 0 50px;
+    font-size: 23px;
+  }
+
+  .hamburger i {
+    top: -13px;
+    right: 30px;
+    line-height: 100px;
+    font-size: 40px;
+    color: #ef4c23;
+
+  }
+
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+  button.buttonBig {
+    top: 70%;
+    width: 350px;
+    height: 85px;
+    font-size: 36px;
+    border: 2px solid #ef4c23;
+    letter-spacing: 2px;
+  }
+
+  nav {
+    background-color: transparent;
+    height: 100px;
+  }
+
+  .hamburger {
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+  }
+
+  .hamburger p {
+    top: 10px;
+    right: 50px;
+    line-height: 80px;
+    font-size: 30px;
+  }
+
+  .hamburger i {
+    top: 5px;
+    right: 40px;
+    line-height: 100px;
+    font-size: 50px;
+  }
+
+  .journey {
+    top: 10%;
+    font-size: 100px;
+  }
+
+  .front {
+    top: 21%;
+    font-size: 40px;
+  }
+
+  button.buttonBig {
+    top: 30%;
+    width: 300px;
+    height: 65px;
+    font-size: 32px;
+    border: 2px solid #ef4c23;
+    letter-spacing: 2px;
+  }
+
+
+
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+
+  nav {
+    position: fixed;
+    background-color: #222;
+    width: 100%;
+    height: 50px;
+    z-index: 999999;
+  }
+
+  ul.leftMenu {
+    display: block;
+    width: 50vw;
+    margin-left: 50px;
+    max-width: 400px;
+    list-style: none;
+  }
+
+  ul.leftMenu li {
+    float: left;
+    width: 25%;
+  }
+
+  ul.leftMenu a {
+    display: block;
+    text-align: center;
+    padding: 0 30px;
+    height: 60px;
+    line-height: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    color: white;
+    transition: .3s;
+    z-index: 999;
+  }
+
+  .leftMenu a:hover {
+    background-color: c5c6c7;
+    color: #ef4c23;
+    transform: scale(1.1);
+  }
+
+  button.buttonBig {
+    top: 70%;
+    width: 350px;
+    height: 85px;
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+
+  .hamburger {
+    width: 130px;
+    height: 50px;
+    line-height: 100px;
+    top: 0;
+    right: 0;
+  }
+
+  .hamburger p {
+    top: -2px;
+    right: 0;
+    line-height: 50px;
+    padding: 0 50px;
+    font-size: 13px;
+    transition: .3s;
+  }
+
+  .hamburger i {
+    top: 0;
+    right: 20px;
+    line-height: 50px;
+    font-size: 20px;
+    transition: .3s;
+
+  }
+
+  button.buttonBig:hover {
+    background-color: #ef4c23;
+  }
+
+}
