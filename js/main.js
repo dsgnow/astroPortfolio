@@ -6,4 +6,6 @@ $(".buttonBig").click(function () {
     $(".circle").toggleClass('animationCircleOut');
     $(".buttonBig").toggleClass('white');
     $(".buttonBig").toggleClass('bgcTrans');
+    $(".buttonBig span").toggleClass('off');
+    $(".slideDown i").toggleClass('white');
 });

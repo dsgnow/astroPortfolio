@@ -13,6 +13,19 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ef4c23;
+}
+
+
 .clearfix::after {
   content: "";
   display: block;
@@ -116,6 +129,14 @@ body {
 
 }
 
+@keyframes slideDown {
+
+  100% {
+    transform: translate(0, 150%);
+  }
+
+}
+
 .white {
   color: white !important;
 }
@@ -124,53 +145,50 @@ body {
   background-color: transparent !important;
 }
 
-
+.buttonBig span.off {
+  display: none;
+}
 
 header {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100vw;
   height: 100vh;
-
+  min-height: 533px;
+  overflow: hidden;
 }
 
 .animationAstronaut {
   position: relative;
-  top: 55%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
   z-index: -3;
   background-color: black;
-  width: 91vw;
-  height: 91vw;
+  width: 151vw;
+  height: 151vw;
   border-radius: 50%;
 }
 
-
 .animationAstronaut .astronaut {
-  top: 28%;
-  right: 7%;
+  top: 22%;
+  right: 15%;
   position: absolute;
-  height: 40%;
+  height: 35%;
   animation: astronautHeader 3s ease-in-out infinite;
   animation-direction: alternate-reverse;
-  z-index: 990;
+  z-index: 999;
 }
 
 .animationAstronaut .circle {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90vw;
-  height: 90vw;
+  width: 150vw;
+  height: 150vw;
   position: absolute;
-  z-index: 991;
+  z-index: 999;
   opacity: 1;
 }
-
 
 .animationCircleOut {
   animation: circleOut 4s forwards;
@@ -178,41 +196,41 @@ header {
 
 .animationAstronaut .earth {
   top: 20%;
-  left: 14%;
+  left: 22%;
   position: absolute;
-  height: 25%;
+  height: 17%;
+  z-index: 999;
 }
 
+.textArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  text-align: center;
+  padding: 20px 0;
+  height: 45%;
+}
 
 .journey {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translate(-50%, -10%);
   font-family: 'Oswald', sans-serif;
-  font-size: 60px;
+  font-size: 50px;
   white-space: nowrap;
   color: black;
   transition: 3s ease-in-out;
 }
 
 .front {
-  position: absolute;
-  top: 115px;
-  left: 50%;
-  transform: translate(-50%, -15%);
   font-family: 'Indie Flower', cursive;
   color: black;
-  font-size: 22px;
+  font-size: 20px;
   white-space: nowrap;
   transition: 3s ease-in-out;
 }
 
 button.buttonBig {
-  position: absolute;
-  bottom: 2%;
-  left: 50%;
-  transform: translate(-50%, -30%);
+  margin-top: 20px;
   width: 150px;
   height: 45px;
   font-size: 18px;
@@ -225,6 +243,24 @@ button.buttonBig {
   transition: .5s ease-in-out;
   outline: none;
   cursor: pointer;
+  z-index: 990;
+}
+
+.slideDown {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 30px;
+  width: 150px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.slideDown i {
+  color: white;
+  transform: scaleX(2);
+  animation: slideDown 1.7s linear infinite;
 }
 
 ul.leftMenu {
@@ -233,12 +269,10 @@ ul.leftMenu {
 
 nav {
   position: fixed;
-  background-color: transparent;
   width: 100%;
-  height: 50px;
+  height: 31px;
   z-index: 999999;
 }
-
 
 .hamburger {
   height: 31px;
@@ -247,6 +281,7 @@ nav {
   top: 0;
   right: 0;
   background-color: black;
+  border-radius: 15px 0 0 15px;
 }
 
 .hamburger p {
@@ -271,7 +306,6 @@ nav {
   transition: .3s;
 }
 
-
 .hamburger:hover i,
 p {
   background-color: c5c6c7;
@@ -280,28 +314,18 @@ p {
   cursor: pointer;
 }
 
-
-
-@media (min-width: 320px) and (orientation: portrait) {}
-
-@media (min-width: 320px) and (min-height: 700px) {}
-
-
 @media (min-width: 768px) and (orientation: portrait) {
 
 
   .journey {
-    top: 10%;
     font-size: 100px;
   }
 
   .front {
-    top: 21%;
     font-size: 40px;
   }
 
   button.buttonBig {
-    top: 33%;
     width: 300px;
     height: 65px;
     font-size: 32px;
@@ -309,8 +333,34 @@ p {
     letter-spacing: 2px;
   }
 
+  .animationAstronaut {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 131vw;
+    height: 131vw;
+  }
 
 
+  .animationAstronaut .astronaut {
+    top: 23%;
+    right: 10%;
+    height: 30%;
+  }
+
+  .animationAstronaut .circle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 130vw;
+    height: 130vw;
+  }
+
+
+  .animationAstronaut .earth {
+    top: 20%;
+    left: 20%;
+    height: 17%;
+  }
 
   nav {
     background-color: transparent;
@@ -322,7 +372,7 @@ p {
   }
 
   .hamburger {
-    width: 200px;
+    width: 160px;
     height: 70px;
     line-height: 70px;
     background-color: black;
@@ -341,21 +391,13 @@ p {
     right: 30px;
     line-height: 100px;
     font-size: 40px;
-    color: #ef4c23;
+    color: white;
 
   }
 
 }
 
 @media (min-width: 1024px) and (orientation: portrait) {
-  button.buttonBig {
-    top: 70%;
-    width: 350px;
-    height: 85px;
-    font-size: 36px;
-    border: 2px solid #ef4c23;
-    letter-spacing: 2px;
-  }
 
   nav {
     background-color: transparent;
@@ -383,24 +425,88 @@ p {
   }
 
   .journey {
-    top: 10%;
-    font-size: 100px;
+    font-size: 130px;
   }
 
   .front {
-    top: 21%;
-    font-size: 40px;
+    font-size: 50px;
   }
 
   button.buttonBig {
-    top: 30%;
-    width: 300px;
-    height: 65px;
-    font-size: 32px;
+    width: 400px;
+    height: 85px;
+    font-size: 38px;
     border: 2px solid #ef4c23;
     letter-spacing: 2px;
+    margin-top: 60px;
   }
 
+
+
+}
+
+@media (orientation: landscape) {
+
+  .textArea {
+    justify-content: center;
+    align-content: center;
+    align-items: space-between;
+    width: 45%;
+    height: 100vh;
+  }
+
+  .journey {
+    font-size: 40px;
+  }
+
+  .front {
+    font-size: 16px;
+  }
+
+  button.buttonBig {
+    width: 150px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .slideDown {
+    left: 22.5%;
+  }
+
+  .slideDown i {
+    color: black;
+  }
+
+  .animationAstronaut {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(-10%, -50%);
+    width: 49vw;
+    height: 49vw;
+  }
+
+
+  .animationAstronaut .astronaut {
+    top: 23%;
+    right: 10%;
+    height: 30%;
+  }
+
+  .animationAstronaut .circle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48vw;
+    height: 48vw;
+  }
+
+
+  .animationAstronaut .earth {
+    top: 20%;
+    left: 20%;
+    height: 17%;
+  }
 
 
 }
@@ -409,7 +515,7 @@ p {
 
   nav {
     position: fixed;
-    background-color: #222;
+    background-color: black;
     width: 100%;
     height: 50px;
     z-index: 999999;
@@ -448,14 +554,6 @@ p {
     transform: scale(1.1);
   }
 
-  button.buttonBig {
-    top: 70%;
-    width: 350px;
-    height: 85px;
-    font-size: 36px;
-    letter-spacing: 2px;
-  }
-
   .hamburger {
     width: 130px;
     height: 50px;
@@ -482,8 +580,64 @@ p {
 
   }
 
+  .animationAstronaut {
+    position: absolute;
+    top: calc(50% + 25px);
+    right: 0;
+    transform: translate(0, -50%);
+    width: 39vw;
+    height: 39vw;
+  }
+
+
+  .animationAstronaut .astronaut {
+    top: 30%;
+    right: 8%;
+    height: 40%;
+  }
+
+  .animationAstronaut .circle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 38vw;
+    height: 38vw;
+  }
+
+
+  .animationAstronaut .earth {
+    top: 20%;
+    left: 23%;
+    height: 17%;
+  }
+
+  .journey {
+    font-size: 90px;
+  }
+
+  .front {
+    font-size: 35px;
+  }
+
+  button.buttonBig {
+    width: 350px;
+    height: 85px;
+    font-size: 36px;
+    margin-top: 50px;
+  }
+
   button.buttonBig:hover {
     background-color: #ef4c23;
+    color: white;
+  }
+
+  button.buttonBig:hover {
+    background-color: #ef4c23;
+    color: white;
+  }
+
+  .slideDown i {
+    font-size: 60px;
   }
 
 }
