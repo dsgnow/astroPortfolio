@@ -1,3 +1,14 @@
+// animation when scroll //
+
+$('nav a').on('click', function () {
+    const goToSection = "[data-section=" + $(this).attr('class') + "]";
+    $('body, html').animate({
+        scrollTop: $(goToSection).offset().top
+    }, 500)
+})
+
+// changes when click ship/cosmos //
+
 $(".buttonBig").click(function () {
     $(".journey").toggleClass('white');
     $(".front").toggleClass('white');

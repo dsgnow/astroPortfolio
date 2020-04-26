@@ -267,7 +267,7 @@ button.buttonBig {
   animation: slideDown 1.7s linear infinite;
 }
 
-ul.leftMenu {
+ul.menu {
   display: none;
 }
 
@@ -525,7 +525,7 @@ p {
     z-index: 999999;
   }
 
-  ul.leftMenu {
+  ul.menu {
     display: block;
     width: 50vw;
     margin-left: 50px;
@@ -533,12 +533,12 @@ p {
     list-style: none;
   }
 
-  ul.leftMenu li {
+  ul.menu li {
     float: left;
     width: 25%;
   }
 
-  ul.leftMenu a {
+  ul.menu a {
     display: block;
     text-align: center;
     padding: 0 30px;
@@ -552,7 +552,7 @@ p {
     z-index: 999;
   }
 
-  .leftMenu a:hover {
+  .menu a:hover {
     background-color: c5c6c7;
     color: #ef4c23;
     transform: scale(1.1);
