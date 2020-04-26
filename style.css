@@ -156,8 +156,8 @@ body {
 header {
   width: 100vw;
   height: 100vh;
-  min-height: 533px;
   overflow: hidden;
+  /* display: none; */
 }
 
 .animationAstronaut {
@@ -180,7 +180,7 @@ header {
   height: 35%;
   animation: astronautHeader 3s ease-in-out infinite;
   animation-direction: alternate-reverse;
-  z-index: 999;
+  z-index: 1001;
 }
 
 .animationAstronaut .circle {
@@ -190,7 +190,7 @@ header {
   width: 150vw;
   height: 150vw;
   position: absolute;
-  z-index: 999;
+  z-index: 1002;
   opacity: 1;
 }
 
@@ -492,9 +492,9 @@ p {
 
 
   .animationAstronaut .astronaut {
-    top: 23%;
+    top: 32%;
     right: 10%;
-    height: 30%;
+    height: 45%;
   }
 
   .animationAstronaut .circle {
@@ -509,7 +509,7 @@ p {
   .animationAstronaut .earth {
     top: 20%;
     left: 20%;
-    height: 17%;
+    height: 23%;
   }
 
 
@@ -616,11 +616,11 @@ p {
   }
 
   .journey {
-    font-size: 90px;
+    font-size: 75px;
   }
 
   .front {
-    font-size: 35px;
+    font-size: 30px;
   }
 
   button.buttonBig {
@@ -643,6 +643,182 @@ p {
 
   .slideDown i {
     font-size: 60px;
+  }
+
+}
+
+@media (min-width: 1350px) and (orientation: landscape) {
+  .journey {
+    font-size: 90px;
+  }
+
+  .front {
+    font-size: 35px;
+  }
+}
+
+
+/* SECTION ABOUT ME */
+@media (orientation: portrait) {
+
+  main section.me {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 100vh;
+  }
+
+  main section.me div.header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+    height: 35vh;
+    /* background-color: cadetblue; */
+  }
+
+  main section.me div.header img.imPiotr {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 73%;
+  }
+
+  main section.me div.about {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 12%;
+    flex-basis: 55%;
+    height: 65vh;
+    /* background-color: royalblue; */
+  }
+
+  main section.me div.about p {
+    color: black;
+    font-family: 'Indie Flower', cursive;
+    line-height: 1;
+    padding-left: 10%;
+    width: 80%;
+    font-size: 13px;
+  }
+
+  main section.me div.rocket {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 45%;
+    height: 70vh;
+  }
+
+  main section.me div.wrapRocket {
+    position: relative;
+    text-align: center;
+    width: 70%;
+    height: 70%;
+  }
+
+  main section.me div.rocket img.rocketImg {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+  }
+
+  main section.me div.rocket img.orangeClouds {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: scaleX(-1);
+    height: 40vw;
+  }
+
+}
+
+@media (orientation: landscape) {
+
+  main section.me {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    height: 100vh;
+  }
+
+  main section.me div.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-basis: 50vh;
+    width: 60vw;
+    position: relative;
+  }
+
+
+  main section.me div.header img.imPiotr {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 60%;
+  }
+
+  main section.me div.about {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-basis: 50vh;
+    width: 60vw;
+  }
+
+  main section.me div.about p {
+    color: black;
+    font-family: 'Indie Flower', cursive;
+    line-height: 1;
+    padding: 0 10%;
+    width: 80%;
+    font-size: 13px;
+  }
+
+  main section.me div.rocket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40vw;
+    height: 100vh;
+  }
+
+  main section.me div.wrapRocket {
+    position: relative;
+    text-align: center;
+    width: 70%;
+    height: 70%;
+  }
+
+  main section.me div.rocket img.rocketImg {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 50%;
+  }
+
+  main section.me div.rocket img.orangeClouds {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: scaleX(-1);
+    height: 40vh;
   }
 
 }
