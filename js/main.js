@@ -40,18 +40,21 @@ $(document).on('scroll', function () {
 
 
     if (scrollValue > rocketHeight + rocketFromTop - windowHeight - 200) {
-        $aboutParagraph.addClass("active");
         $wrapRocket.addClass("active");
         $rocketClouds.addClass("active");
 
         function rocketInSpace() {
             $aboutBgcStars.addClass("starsAll opacityBgc");
             $aboutBgcTwink.addClass("twinkling opacityBgc");
+        }
+
+        function rocketInSpaceTexts() {
             $hiImPiotr.attr("src", "img/imPiotrWhite.png");
             $aboutParagraph.addClass('white');
         }
 
         setTimeout(rocketInSpace, 4000);
+        setTimeout(rocketInSpaceTexts, 4000);
 
 
     }
