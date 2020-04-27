@@ -141,6 +141,61 @@ body {
 
 }
 
+/* ANIMATION ROCKET */
+@keyframes opacityBgc {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 1000px;
+  }
+
+}
+
+
+@keyframes engineSmoke {
+  0% {}
+
+
+  60% {
+    width: 18px;
+  }
+
+  100% {}
+
+}
+
+@keyframes animateEngineFire {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(1deg);
+  }
+}
+
+@keyframes greyCloudsRocket {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+
+
+  60% {
+    opacity: .9;
+    transform: translate(30%, 5%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(10%, 0);
+  }
+
+}
+
+
 .white {
   color: white !important;
 }
@@ -659,6 +714,32 @@ p {
 
 
 /* SECTION ABOUT ME */
+main section.me {
+  overflow: hidden;
+}
+
+.blackBgcTwinkAbout {
+  opacity: 0;
+}
+
+.blackBgcStarsAbout {
+  transform: translateY(-100%);
+  transition: 6s;
+  animation: opacityBgc 50s infinite;
+}
+
+.blackBgcStarsAbout.opacityBgc {
+  transform: translateY(0);
+}
+
+
+.blackBgcTwinkAbout.opacityBgc {
+  opacity: 1;
+  transition-delay: 4s;
+}
+
+
+
 @media (orientation: portrait) {
 
   main section.me {
@@ -705,6 +786,12 @@ p {
     padding-left: 10%;
     width: 80%;
     font-size: 13px;
+    transform: translateX(-110%);
+    transition: .5s linear;
+  }
+
+  main section.me div.about p.active {
+    transform: translateX(0);
   }
 
   main section.me div.rocket {
@@ -717,27 +804,77 @@ p {
   }
 
   main section.me div.wrapRocket {
-    position: relative;
     text-align: center;
     width: 70%;
-    height: 70%;
+    height: 60%;
+    transform: translateY(0);
+    transition: 6s linear;
+    position: relative;
+  }
+
+  main section.me div.wrapRocket.active {
+    transform: translateY(-30%);
   }
 
   main section.me div.rocket img.rocketImg {
     position: absolute;
-    top: 5%;
+    top: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    width: 80%;
+    height: 300px;
+    z-index: 999;
   }
 
-  main section.me div.rocket img.orangeClouds {
+  main section.me div.rocket div.engineSmoke {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 60vh;
+    width: 20px;
+    background-color: #ccc;
+    animation: engineSmoke .5s infinite;
+  }
+
+  div.engineSmoke img.engineFire {
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    height: 25%;
+    width: 100%;
+    transform-origin: top center;
+    animation: animateEngineFire .2s infinite;
+  }
+
+  img.greyClouds {
     position: absolute;
     bottom: 0;
-    right: 0;
-    transform: scaleX(-1);
-    height: 40vw;
+    right: -3%;
+    height: 20vw;
+    opacity: 0;
+    z-index: 9999;
   }
+
+  img.greyClouds1.active {
+    animation: greyCloudsRocket 2s reverse;
+    height: 60vw;
+  }
+
+  img.greyClouds2.active {
+    animation: greyCloudsRocket 3s reverse;
+  }
+
+  img.greyClouds3.active {
+    animation: greyCloudsRocket 4s reverse;
+  }
+
+  img.greyClouds4.active {
+    animation: greyCloudsRocket 5s reverse;
+  }
+
+
+
 
 }
 
@@ -788,6 +925,7 @@ p {
   }
 
   main section.me div.rocket {
+    transform: translateY(20%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -798,11 +936,17 @@ p {
     height: 100vh;
   }
 
+  main section.me div.wrapRocket.active {
+    transform: translateY(-40%);
+  }
+
   main section.me div.wrapRocket {
     position: relative;
     text-align: center;
     width: 70%;
     height: 70%;
+    transition: 4s linear;
+
   }
 
   main section.me div.rocket img.rocketImg {
@@ -810,15 +954,56 @@ p {
     top: 5%;
     left: 50%;
     transform: translate(-50%, 0);
-    width: 50%;
+    width: 100px;
+    z-index: 9999;
   }
 
-  main section.me div.rocket img.orangeClouds {
+  main section.me div.rocket div.engineSmoke {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 60vh;
+    width: 20px;
+    background-color: #ccc;
+    animation: engineSmoke .5s infinite;
+  }
+
+  div.engineSmoke img.engineFire {
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    height: 25%;
+    width: 100%;
+    transform-origin: top center;
+    animation: animateEngineFire .2s infinite;
+  }
+
+  img.greyClouds {
     position: absolute;
     bottom: 0;
-    right: 0;
-    transform: scaleX(-1);
-    height: 40vh;
+    right: -3%;
+    height: 45vh;
+    opacity: 0;
+    z-index: 9999;
+  }
+
+  img.greyClouds1.active {
+    animation: greyCloudsRocket 2s reverse;
+    height: 60vh;
+  }
+
+  img.greyClouds2.active {
+    animation: greyCloudsRocket 3s reverse;
+  }
+
+  img.greyClouds3.active {
+    animation: greyCloudsRocket 4s reverse;
+  }
+
+  img.greyClouds4.active {
+    animation: greyCloudsRocket 5s reverse;
   }
 
 }
