@@ -724,7 +724,7 @@ main section.me {
 
 .blackBgcStarsAbout {
   transform: translateY(-100%);
-  transition: 6s;
+  transition: 4s;
   animation: opacityBgc 50s infinite;
 }
 
@@ -735,7 +735,12 @@ main section.me {
 
 .blackBgcTwinkAbout.opacityBgc {
   opacity: 1;
-  transition-delay: 5s;
+  transition-delay: 3s;
+}
+
+.transformY0 {
+  transform: translateY(0);
+  transition: 0s !important;
 }
 
 
@@ -805,8 +810,8 @@ main section.me {
     text-align: center;
     width: 70%;
     height: 60%;
-    transform: translateY(0);
-    transition: 6s linear;
+    transform: translateY(20%);
+    transition: 4s linear;
     position: relative;
   }
 
@@ -855,20 +860,20 @@ main section.me {
   }
 
   img.greyClouds1.active {
-    animation: greyCloudsRocket 2s reverse;
+    animation: greyCloudsRocket 1s reverse;
     height: 60vw;
   }
 
   img.greyClouds2.active {
-    animation: greyCloudsRocket 3s reverse;
+    animation: greyCloudsRocket 2s reverse;
   }
 
   img.greyClouds3.active {
-    animation: greyCloudsRocket 4s reverse;
+    animation: greyCloudsRocket 3s reverse;
   }
 
   img.greyClouds4.active {
-    animation: greyCloudsRocket 5s reverse;
+    animation: greyCloudsRocket 4s reverse;
   }
 
 

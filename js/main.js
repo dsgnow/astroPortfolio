@@ -42,6 +42,7 @@ $(document).on('scroll', function () {
     if (scrollValue > rocketHeight + rocketFromTop - windowHeight - 200) {
         $wrapRocket.addClass("active");
         $rocketClouds.addClass("active");
+        $wrapRocket.removeClass("transformY0");
 
         function rocketInSpace() {
             $aboutBgcStars.addClass("starsAll opacityBgc");
@@ -53,8 +54,8 @@ $(document).on('scroll', function () {
             $aboutParagraph.addClass('white');
         }
 
-        setTimeout(rocketInSpace, 4000);
-        setTimeout(rocketInSpaceTexts, 4000);
+        setTimeout(rocketInSpace, 3000);
+        setTimeout(rocketInSpaceTexts, 3000);
 
 
     }
@@ -66,5 +67,7 @@ $(document).on('scroll', function () {
         $aboutBgcTwink.removeClass("twinkling opacityBgc");
         $hiImPiotr.attr("src", "img/imPiotr.png");
         $aboutParagraph.removeClass('white');
+
+        $wrapRocket.addClass("transformY0");
     }
 })
