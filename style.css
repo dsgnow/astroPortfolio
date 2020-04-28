@@ -217,7 +217,7 @@ header {
 
 .animationAstronaut {
   position: relative;
-  top: 40%;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
@@ -229,7 +229,7 @@ header {
 }
 
 .animationAstronaut .astronaut {
-  top: 22%;
+  top: 15%;
   right: 15%;
   position: absolute;
   height: 35%;
@@ -274,7 +274,7 @@ header {
 
 .journey {
   font-family: 'Oswald', sans-serif;
-  font-size: 50px;
+  font-size: 45px;
   white-space: nowrap;
   color: black;
   transition: 3s ease-in-out;
@@ -283,13 +283,13 @@ header {
 .front {
   font-family: 'Indie Flower', cursive;
   color: black;
-  font-size: 20px;
+  font-size: 17px;
   white-space: nowrap;
   transition: 3s ease-in-out;
 }
 
 button.buttonBig {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 150px;
   height: 45px;
   font-size: 18px;
@@ -371,6 +371,103 @@ p {
   color: #ef4c23;
   transform: scale(1.1);
   cursor: pointer;
+}
+
+@media (min-width: 320px) and (orientation: portrait) {
+
+  .textArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    text-align: center;
+    padding: 20px 0;
+    height: 45%;
+  }
+
+  .journey {
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+    white-space: nowrap;
+    color: black;
+    transition: 3s ease-in-out;
+  }
+
+  .front {
+    font-family: 'Indie Flower', cursive;
+    color: black;
+    font-size: 20px;
+    white-space: nowrap;
+    transition: 3s ease-in-out;
+  }
+
+  button.buttonBig {
+    margin-top: 20px;
+    width: 150px;
+    height: 45px;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    border: 1px solid #ef4c23;
+    border-radius: 25px;
+    letter-spacing: 2px;
+    background-color: white;
+    color: black;
+    transition: .5s ease-in-out;
+    outline: none;
+    cursor: pointer;
+    z-index: 990;
+  }
+
+  .animationAstronaut {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    z-index: -3;
+    background-color: black;
+    width: 151vw;
+    height: 151vw;
+    border-radius: 50%;
+  }
+
+  .animationAstronaut .astronaut {
+    top: 22%;
+    right: 15%;
+    position: absolute;
+    height: 35%;
+    animation: astronautHeader 3s ease-in-out infinite;
+    animation-direction: alternate-reverse;
+    z-index: 1001;
+  }
+
+  .animationAstronaut .circle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150vw;
+    height: 150vw;
+    position: absolute;
+    z-index: 1002;
+    opacity: 1;
+  }
+
+  .animationCircleOut {
+    animation: circleOut 4s forwards;
+  }
+
+  .animationAstronaut .earth {
+    top: 20%;
+    left: 22%;
+    position: absolute;
+    height: 17%;
+    z-index: 999;
+  }
+
+
+
+
 }
 
 @media (min-width: 768px) and (orientation: portrait) {
@@ -534,6 +631,12 @@ p {
 
   .slideDown i {
     color: black;
+  }
+
+  header {
+    max-height: 100vh;
+    overflow: hidden;
+    position: relative;
   }
 
   .animationAstronaut {
