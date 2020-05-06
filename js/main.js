@@ -12,6 +12,8 @@ $('nav a').on('click', function () {
 $(".buttonBig").click(function () {
     $(".journey").toggleClass('white');
     $(".front").toggleClass('white');
+    $(".journey").addClass('transitionText');
+    $(".front").addClass('transitionText');
     $(".blackBgcStars").toggleClass('starsAll');
     $(".blackBgcTwink").toggleClass('twinkling');
     $(".circle").toggleClass('animationCircleOut');
@@ -19,6 +21,13 @@ $(".buttonBig").click(function () {
     $(".buttonBig").toggleClass('bgcTrans');
     $(".buttonBig span").toggleClass('off');
     $(".slideDown i").toggleClass('white');
+
+    function deleteTextTransition() {
+        $(".journey").removeClass('transitionText');
+        $(".front").removeClass('transitionText');
+    }
+
+    setTimeout(deleteTextTransition, 3000);
 });
 
 // appear elements when scroll //
@@ -50,7 +59,7 @@ $(document).on('scroll', function () {
         }
 
         function rocketInSpaceTexts() {
-            $hiImPiotr.attr("src", "img/imPiotrWhite.png");
+            $hiImPiotr.attr("src", "img/imPiotrWhite.svg");
             $aboutParagraph.addClass('white');
         }
 
@@ -65,7 +74,7 @@ $(document).on('scroll', function () {
         $('section.me *').removeClass('active');
         $aboutBgcStars.removeClass("starsAll opacityBgc");
         $aboutBgcTwink.removeClass("twinkling opacityBgc");
-        $hiImPiotr.attr("src", "img/imPiotr.png");
+        $hiImPiotr.attr("src", "img/imPiotr.svg");
         $aboutParagraph.removeClass('white');
 
         $wrapRocket.addClass("transformY0");

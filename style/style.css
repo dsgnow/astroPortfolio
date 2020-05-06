@@ -208,6 +208,10 @@ body {
   display: none;
 }
 
+.transitionText {
+  transition: 3s ease-in-out;
+}
+
 header {
   width: 100vw;
   height: 100vh;
@@ -277,7 +281,6 @@ header {
   font-size: 45px;
   white-space: nowrap;
   color: black;
-  transition: 3s ease-in-out;
 }
 
 .front {
@@ -285,7 +288,6 @@ header {
   color: black;
   font-size: 17px;
   white-space: nowrap;
-  transition: 3s ease-in-out;
 }
 
 button.buttonBig {
@@ -391,7 +393,6 @@ p {
     font-size: 50px;
     white-space: nowrap;
     color: black;
-    transition: 3s ease-in-out;
   }
 
   .front {
@@ -399,7 +400,6 @@ p {
     color: black;
     font-size: 20px;
     white-space: nowrap;
-    transition: 3s ease-in-out;
   }
 
   button.buttonBig {
@@ -936,7 +936,7 @@ main section.me {
     top: 200px;
     left: 50%;
     transform: translate(-50%, 0);
-    height: 60vh;
+    height: 100vh;
     width: 20px;
     background-color: #ccc;
     animation: engineSmoke .5s infinite;
@@ -944,10 +944,10 @@ main section.me {
 
   div.engineSmoke img.engineFire {
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: 0%;
     transform: translate(-50%, -50%);
-    height: 25%;
+    height: 15%;
     width: 100%;
     transform-origin: top center;
     animation: animateEngineFire .2s infinite;
@@ -979,10 +979,86 @@ main section.me {
     animation: greyCloudsRocket 4s reverse;
   }
 
-
-
-
 }
+
+@media (min-width: 768px) and (orientation: portrait) {
+  main section.me div.about p {
+    padding-left: 10%;
+    width: 80%;
+    font-size: 22px;
+  }
+
+  main section.me div.rocket {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 45%;
+    height: 70vh;
+  }
+
+  main section.me div.wrapRocket {
+    text-align: center;
+    width: 70%;
+    height: 60%;
+    transform: translateY(20%);
+    transition: 4s linear;
+    position: relative;
+  }
+
+  main section.me div.rocket img.rocketImg {
+    height: 400px;
+  }
+
+  main section.me div.rocket div.engineSmoke {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 100vh;
+    width: 20px;
+    background-color: #ccc;
+    animation: engineSmoke .5s infinite;
+  }
+
+  div.engineSmoke img.engineFire {
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    height: 15%;
+    width: 100%;
+    transform-origin: top center;
+    animation: animateEngineFire .2s infinite;
+  }
+
+  img.greyClouds {
+    position: absolute;
+    bottom: 0;
+    right: -3%;
+    height: 25vw;
+    opacity: 0;
+    z-index: 9999;
+  }
+
+  img.greyClouds1.active {
+    animation: greyCloudsRocket 1s reverse;
+    height: 65vw;
+  }
+
+  img.greyClouds2.active {
+    animation: greyCloudsRocket 2s reverse;
+  }
+
+  img.greyClouds3.active {
+    animation: greyCloudsRocket 3s reverse;
+  }
+
+  img.greyClouds4.active {
+    animation: greyCloudsRocket 4s reverse;
+  }
+}
+
 
 @media (orientation: landscape) {
 
@@ -1070,7 +1146,7 @@ main section.me {
     top: 200px;
     left: 50%;
     transform: translate(-50%, 0);
-    height: 60vh;
+    height: 100vh;
     width: 20px;
     background-color: #ccc;
     animation: engineSmoke .5s infinite;
@@ -1078,10 +1154,10 @@ main section.me {
 
   div.engineSmoke img.engineFire {
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: 0%;
     transform: translate(-50%, -50%);
-    height: 25%;
+    height: 15%;
     width: 100%;
     transform-origin: top center;
     animation: animateEngineFire .2s infinite;
@@ -1113,4 +1189,130 @@ main section.me {
     animation: greyCloudsRocket 5s reverse;
   }
 
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+
+  main section.me div.header img.imPiotr {
+    height: 70%;
+  }
+
+
+  main section.me div.about p {
+    margin-top: 10%;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  main section.me div.rocket {
+    transform: translateY(30%);
+  }
+
+  main section.me div.wrapRocket.active {
+    transform: translateY(-30%);
+  }
+
+
+  main section.me div.rocket img.rocketImg {
+    width: 170px;
+  }
+
+
+  div.engineSmoke img.engineFire {
+    height: 15%;
+    top: 20%;
+  }
+
+  img.greyClouds {
+    height: 45vh;
+  }
+
+  img.greyClouds1.active {
+    height: 60vh;
+  }
+
+}
+
+@media (min-width: 1366px) and (orientation: landscape) {
+
+  main section.me div.header img.imPiotr {
+    height: 70%;
+  }
+
+
+  main section.me div.about p {
+    margin-top: 7%;
+    font-size: 24px;
+    max-width: 1000px;
+  }
+
+
+  main section.me div.rocket {
+    transform: translateY(20%);
+  }
+
+  main section.me div.wrapRocket.active {
+    transform: translateY(-30%);
+  }
+
+
+  main section.me div.rocket img.rocketImg {
+    width: 230px;
+  }
+
+
+  div.engineSmoke img.engineFire {
+    height: 20%;
+    top: 30%;
+  }
+
+  img.greyClouds {
+    height: 45vh;
+  }
+
+  img.greyClouds1.active {
+    height: 60vh;
+  }
+
+}
+
+@media (min-width: 1500px) and (orientation: landscape) {
+  main section.me div.header img.imPiotr {
+    height: 70%;
+  }
+
+
+  main section.me div.about p {
+    margin-top: 7%;
+    font-size: 24px;
+    max-width: 1000px;
+  }
+
+
+  main section.me div.rocket {
+    transform: translateY(10%);
+  }
+
+  main section.me div.wrapRocket.active {
+    transform: translateY(-25%);
+  }
+
+
+  main section.me div.rocket img.rocketImg {
+    width: 230px;
+  }
+
+
+  div.engineSmoke img.engineFire {
+    height: 15%;
+    top: 30%;
+  }
+
+  img.greyClouds {
+    height: 45vh;
+  }
+
+  img.greyClouds1.active {
+    height: 60vh;
+  }
 }
