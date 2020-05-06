@@ -1418,10 +1418,10 @@ section.projects .projectAbout {
 section.projects .wrapAbout {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   flex-wrap: wrap;
-  padding: 5% 10% 10% 30%;
-  text-align: right;
+  padding: 5% 15% 10% 15%;
+  text-align: justify;
   z-index: 9999;
 }
 
