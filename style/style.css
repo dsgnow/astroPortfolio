@@ -1154,11 +1154,11 @@ main section.me {
 
   div.engineSmoke img.engineFire {
     position: absolute;
-    top: 5%;
+    top: 20px;
     left: 0%;
     transform: translate(-50%, -50%);
-    height: 15%;
-    width: 100%;
+    height: 100px;
+    width: 90%;
     transform-origin: top center;
     animation: animateEngineFire .2s infinite;
   }
@@ -1191,7 +1191,7 @@ main section.me {
 
 }
 
-@media (min-width: 1024px) and (orientation: landscape) {
+@media (min-width: 800px) and (orientation: landscape) {
 
   main section.me div.header img.imPiotr {
     height: 70%;
@@ -1239,8 +1239,8 @@ main section.me {
   }
 
   div.engineSmoke img.engineFire {
-    height: 15%;
-    top: 20%;
+    height: 180px;
+    top: 130px;
 
   }
 
@@ -1283,8 +1283,8 @@ main section.me {
 
 
   div.engineSmoke img.engineFire {
-    height: 20%;
-    top: 30%;
+    height: 180px;
+    top: 300px;
   }
 
   img.greyClouds {
@@ -1325,8 +1325,8 @@ main section.me {
 
 
   div.engineSmoke img.engineFire {
-    height: 15%;
-    top: 30%;
+    height: 180px;
+    top: 300px;
   }
 
   img.greyClouds {
