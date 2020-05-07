@@ -1697,6 +1697,30 @@ main section.projects .wrapProject {
   }
 }
 
+@media (min-width: 300px) and (orientation: landscape) {
+
+  .wrapProject .projectAbout {
+    margin-top: 0;
+  }
+
+  .wrapProject .wrapAbout {
+    padding: 0 15%;
+  }
+
+}
+
+@media (min-width: 640px) and (orientation: landscape) {
+
+  .wrapProject .projectAbout {
+    margin-top: 10px;
+  }
+
+  .wrapProject .wrapAbout {
+    padding: 3% 15%;
+  }
+
+}
+
 @media (min-width: 1024px) and (orientation: landscape) {
 
 
