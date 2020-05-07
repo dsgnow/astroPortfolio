@@ -214,6 +214,24 @@ body {
   }
 }
 
+@keyframes greyCloudsStaticRight {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+
+
+  60% {
+    opacity: .9;
+    transform: translate(3%, 1%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(2%, 0);
+  }
+}
+
 @keyframes zoomInImg {
   0% {
     min-width: 100%;
@@ -849,10 +867,6 @@ p {
     color: white;
   }
 
-  button.buttonBig:hover {
-    background-color: #ef4c23;
-    color: white;
-  }
 
   .slideDown i {
     font-size: 60px;
@@ -1349,7 +1363,7 @@ main section.me {
 
   main section.me div.about p {
     margin-top: 7%;
-    font-size: 24px;
+    font-size: 20px;
     max-width: 1000px;
   }
 
@@ -1391,8 +1405,7 @@ main section.me {
 
   main section.me div.about p {
     margin-top: 7%;
-    font-size: 24px;
-    max-width: 1000px;
+    max-width: 800px;
   }
 
 
@@ -1429,21 +1442,25 @@ main section.me {
 
 main section.projects {
   overflow: hidden;
+}
+
+main section.projects .wrapProject {
   position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   height: 100vh;
+
 }
 
-section.projects .projectImg {
+.wrapProject .projectImg {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-basis: 30%;
 }
 
-section.projects .projectImg div.image {
+.wrapProject .projectImg div.image {
   position: relative;
 
   width: 100%;
@@ -1452,12 +1469,9 @@ section.projects .projectImg div.image {
   border: 4px solid black; */
   background-color: white;
   overflow: hidden;
-  -webkit-box-shadow: 7px 7px 33px -4px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 7px 7px 33px -4px rgba(0, 0, 0, 0.75);
-  box-shadow: 7px 7px 33px -4px rgba(0, 0, 0, 0.75);
 }
 
-.projectImg div.image img {
+.wrapProject .projectImg div.image img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1471,19 +1485,20 @@ section.projects .projectImg div.image {
 }
 
 
-div.image:hover img {
+.wrapProject div.image:hover img {
   animation: zoomInImg 1s alternate;
   animation-fill-mode: forwards;
 
 }
 
-section.projects .projectAbout {
+.wrapProject .projectAbout {
   flex-grow: 1;
   align-content: center;
+  margin-top: 40px;
   /* background-color: blue; */
 }
 
-section.projects .wrapAbout {
+.wrapProject .wrapAbout {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1493,20 +1508,20 @@ section.projects .wrapAbout {
   z-index: 9999;
 }
 
-.wrapAbout h2 {
+.wrapProject .wrapAbout h2 {
   display: block;
   font-family: 'Oswald', sans-serif;
   font-size: 40px;
   font-weight: 400;
 }
 
-.wrapAbout h2 span {
+.wrapProject .wrapAbout h2 span {
   font-family: 'Oswald', sans-serif;
   font-size: 40px;
   color: #ef4c23;
 }
 
-.wrapAbout p {
+.wrapProject .wrapAbout p {
   display: block;
   font-family: 'Indie Flower', cursive;
   font-size: 14px;
@@ -1516,7 +1531,7 @@ section.projects .wrapAbout {
   padding-right: 5%;
 }
 
-.wrapAbout .buttons button {
+.wrapProject .wrapAbout .buttons button {
   margin-top: 10px;
   width: 80px;
   height: 35px;
@@ -1534,32 +1549,267 @@ section.projects .wrapAbout {
   margin-left: 10px;
 }
 
-section.projects .cloudsLeftStatic {
+.wrapProject .wrapAbout .buttons button:hover {
+  background-color: #ef4c23;
+  color: white;
+}
+
+.wrapProject .cloudsLeftStatic,
+.wrapProject .cloudsRightStatic {
   position: absolute;
   width: 90%;
   z-index: -99;
 }
 
-section.projects .cloudLeftStatic1 {
+.wrapProject .cloudLeftStatic1 {
   bottom: 0;
   left: 0;
   animation: greyCloudsStaticLeft 4s infinite;
 }
 
-section.projects .cloudLeftStatic2 {
+.wrapProject .cloudLeftStatic2 {
   bottom: 0;
   left: 0;
   animation: greyCloudsStaticLeft 7s infinite;
 }
 
-section.projects .cloudLeftStatic3 {
+.wrapProject .cloudLeftStatic3 {
   bottom: 0;
   left: 0;
   animation: greyCloudsStaticLeft 10s infinite;
 }
 
-section.projects .cloudLeftStatic4 {
+.wrapProject .cloudLeftStatic4 {
   bottom: 0;
   left: 0;
   animation: greyCloudsStaticLeft 13s infinite;
+}
+
+
+
+
+.wrapProject .cloudRightStatic1 {
+  bottom: 0;
+  right: 0;
+  animation: greyCloudsStaticRight 4s infinite;
+}
+
+.wrapProject .cloudRightStatic2 {
+  bottom: 0;
+  right: 0;
+  animation: greyCloudsStaticRight 7s infinite;
+}
+
+.wrapProject .cloudRightStatic3 {
+  bottom: 0;
+  right: 0;
+  animation: greyCloudsStaticRight 10s infinite;
+}
+
+.wrapProject .cloudRightStatic4 {
+  bottom: 0;
+  right: 0;
+  animation: greyCloudsStaticRight 13s infinite;
+}
+
+
+
+@media (min-width: 768px) and (orientation: portrait) {
+
+  .wrapProject .wrapAbout {
+    margin-top: 50px;
+  }
+
+  .wrapProject .wrapAbout h2 {
+    font-size: 60px;
+  }
+
+  .wrapProject .wrapAbout h2 span {
+    font-size: 60px;
+  }
+
+  .wrapProject .wrapAbout p {
+    font-size: 24px;
+    line-height: 1.1;
+    margin: 10% 0;
+    padding-right: 5%;
+  }
+
+  .wrapProject .wrapAbout .buttons button {
+    margin-top: 10px;
+    width: 150px;
+    height: 60px;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    border: 1px solid #ef4c23;
+    border-radius: 25px;
+    letter-spacing: 2px;
+    background-color: white;
+    color: black;
+    transition: .5s ease-in-out;
+    outline: none;
+    cursor: pointer;
+    z-index: 990;
+    margin-left: 10px;
+  }
+}
+
+
+@media (orientation: landscape) {
+  .wrapProject .projectAbout {
+    height: 70%;
+    align-content: center;
+    margin-top: 10px;
+  }
+
+  .wrapProject .wrapAbout {
+    padding: 3% 15%;
+  }
+
+  .wrapProject .wrapAbout h2 {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+  }
+
+  .wrapProject .wrapAbout h2 span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    color: #ef4c23;
+  }
+
+  .wrapProject .wrapAbout p {
+    display: block;
+    font-family: 'Indie Flower', cursive;
+    font-size: 13px;
+    line-height: 1.2;
+    color: black;
+    margin: 3%;
+    padding-right: 0;
+    max-width: 80%;
+  }
+
+  .wrapProject .cloudsLeftStatic,
+  .wrapProject .cloudsRightStatic {
+    width: 40%;
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+
+
+  main section.projects {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .wrapProject .projectImg {
+    flex-basis: 50%;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .wrapProject .projectAbout {
+    margin-top: 10px;
+    flex-grow: 0;
+    height: 50%;
+  }
+
+  .wrapProject .wrapAbout {
+    padding: 3% 15%;
+  }
+
+  .wrapProject .wrapAbout h2 {
+    font-size: 50px;
+  }
+
+  .wrapProject .wrapAbout h2 span {
+    font-size: 50px;
+  }
+
+  .wrapProject .wrapAbout p {
+    font-size: 17px;
+    line-height: 1;
+    margin: 10% 0 5% 0;
+  }
+
+  .wrapProject .wrapAbout .buttons button {
+    margin-top: 10px;
+    width: 130px;
+    height: 43px;
+    font-size: 14px;
+    font-family: 'Oswald', sans-serif;
+    border: 1px solid #ef4c23;
+    border-radius: 25px;
+    letter-spacing: 2px;
+    background-color: white;
+    color: black;
+    transition: .5s ease-in-out;
+    outline: none;
+    cursor: pointer;
+    z-index: 990;
+    margin-left: 10px;
+  }
+
+  .wrapProject .cloudsLeftStatic,
+  .wrapProject .cloudsRightStatic {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1400px) and (orientation: landscape) {
+
+  .projects {
+    justify-content: center;
+  }
+
+  .wrapProject {
+    max-width: 1000px;
+  }
+
+  .wrapProject .projectImg {
+    flex-basis: 50%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wrapProject .projectAbout {
+    margin-top: 50px;
+    flex-grow: 0;
+    height: 50%;
+  }
+
+  .wrapProject .wrapAbout p {
+    font-size: 17px;
+    line-height: 1;
+    margin: 6% 0;
+    padding: 0 50px;
+
+  }
+
+  .wrapProject .wrapAbout .buttons button {
+    margin-top: 10px;
+    width: 130px;
+    height: 43px;
+    font-size: 14px;
+    font-family: 'Oswald', sans-serif;
+    border: 1px solid #ef4c23;
+    border-radius: 25px;
+    letter-spacing: 2px;
+    background-color: white;
+    color: black;
+    transition: .5s ease-in-out;
+    outline: none;
+    cursor: pointer;
+    z-index: 990;
+    margin-left: 10px;
+  }
+
+  .wrapProject .cloudsLeftStatic,
+  .wrapProject .cloudsRightStatic {
+    width: 80%;
+  }
 }
