@@ -7,6 +7,23 @@ $('nav a').on('click', function () {
     }, 500)
 })
 
+// change nav visiblity when scroll //
+const $hamburger = $('.hamburger');
+const $nav = $('.nav');
+
+var lastScrollTop = 0;
+$(window).scroll(function (event) {
+    var st = $(this).scrollTop();
+    if (st > lastScrollTop) {
+        $(".hamburger").addClass('opacityNone');
+        $(".nav").addClass('opacityNone');
+    } else {
+        $(".hamburger").removeClass('opacityNone');
+        $(".nav").removeClass('opacityNone');
+    }
+    lastScrollTop = st;
+});
+
 // changes when click ship/cosmos //
 
 $(".buttonBig").click(function () {
