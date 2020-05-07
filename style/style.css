@@ -289,7 +289,8 @@ header {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  /* display: none; */
+  min-height: 300px;
+  min-width: 300px;
 }
 
 .animationAstronaut {
@@ -345,7 +346,7 @@ header {
   align-items: center;
   flex-grow: 0;
   text-align: center;
-  padding: 20px 0;
+  padding: 0;
   height: 45%;
 }
 
@@ -365,9 +366,9 @@ header {
 
 button.buttonBig {
   margin-top: 10px;
-  width: 150px;
-  height: 45px;
-  font-size: 18px;
+  width: 135px;
+  height: 35px;
+  font-size: 14px;
   font-family: 'Oswald', sans-serif;
   border: 1px solid #ef4c23;
   border-radius: 25px;
@@ -451,21 +452,12 @@ p {
 @media (min-width: 320px) and (orientation: portrait) {
 
   .textArea {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 0;
-    text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     height: 45%;
   }
 
   .journey {
-    font-family: 'Oswald', sans-serif;
     font-size: 50px;
-    white-space: nowrap;
-    color: black;
   }
 
   .front {
@@ -477,9 +469,9 @@ p {
 
   button.buttonBig {
     margin-top: 20px;
-    width: 150px;
-    height: 45px;
-    font-size: 18px;
+    width: 135px;
+    height: 35px;
+    font-size: 14px;
     font-family: 'Oswald', sans-serif;
     border: 1px solid #ef4c23;
     border-radius: 25px;
@@ -888,6 +880,8 @@ p {
 /* SECTION ABOUT ME */
 main section.me {
   overflow: hidden;
+  min-height: 300px;
+  min-width: 300px;
 }
 
 .blackBgcTwinkAbout {
@@ -1450,6 +1444,8 @@ main section.projects .wrapProject {
   flex-direction: column;
   flex-wrap: nowrap;
   height: 100vh;
+  min-height: 300px;
+  min-width: 300px;
 
 }
 
@@ -1709,7 +1705,7 @@ main section.projects .wrapProject {
 
 }
 
-@media (min-width: 640px) and (orientation: landscape) {
+@media (min-width: 640px) and (min-height: 360px) and (orientation: landscape) {
 
   .wrapProject .projectAbout {
     margin-top: 10px;
