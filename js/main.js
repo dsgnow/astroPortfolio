@@ -7,22 +7,51 @@ $('nav a').on('click', function () {
     }, 500)
 })
 
+$('.hambPopup a').on('click', function () {
+    hambPop.classList.remove('show');
+    hambButtonI.classList.toggle('fa-times');
+    const goToSection = "[data-section=" + $(this).attr('class') + "]";
+    $('body, html').animate({
+        scrollTop: $(goToSection).offset().top
+    }, 500)
+})
+
+
+
 // change nav visiblity when scroll //
 const $hamburger = $('.hamburger');
 const $nav = $('.nav');
+let popHambUse = false;
 
 var lastScrollTop = 0;
 $(window).scroll(function (event) {
     var st = $(this).scrollTop();
     if (st > lastScrollTop) {
-        $(".hamburger").addClass('opacityNone');
+        if (popHambUse === false) {
+            $(".hamburger").addClass('opacityNone');
+        }
         $(".nav").addClass('opacityNone');
     } else {
-        $(".hamburger").removeClass('opacityNone');
+        if (popHambUse === false) {
+            $(".hamburger").removeClass('opacityNone');
+        }
         $(".nav").removeClass('opacityNone');
     }
     lastScrollTop = st;
 });
+
+// hamburger popup //
+
+const hambButton = document.querySelector('.hamburger');
+const hambButtonI = document.querySelector('.hamburger i');
+const hambPop = document.querySelector('.hambPopup');
+
+hambButton.addEventListener('click', () => {
+    popHambUse = !popHambUse;
+    hambPop.classList.toggle('show');
+    hambButtonI.classList.toggle('fa-times');
+})
+
 
 // changes when click ship/cosmos //
 
@@ -80,8 +109,8 @@ $(document).on('scroll', function () {
             $aboutParagraph.addClass('white');
         }
 
-        setTimeout(rocketInSpace, 3000);
-        setTimeout(rocketInSpaceTexts, 3000);
+        //setTimeout(rocketInSpace, 3000);
+        //setTimeout(rocketInSpaceTexts, 3000);
 
 
     }
