@@ -311,6 +311,10 @@ body {
   background-color: #ef4c23;
 }
 
+.hambPopup li:hover a {
+  color: white;
+}
+
 
 .white {
   color: white !important;
