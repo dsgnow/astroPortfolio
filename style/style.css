@@ -1930,3 +1930,92 @@ main section.projects .wrapProject {
     width: 80%;
   }
 }
+
+/* CONTACT */
+
+main section.contact {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.shoe {
+  width: 100vw;
+  height: 50vh;
+  position: relative;
+}
+
+.shoe img {
+  width: 80%;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.contactForm {
+  height: 50vh;
+  width: 100vw;
+  min-height: 300px;
+}
+
+.contactForm h2 {
+  padding-top: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.contactForm h2 span {
+  color: #ef4c23;
+}
+
+.contactForm input,
+textarea {
+  font-size: 12px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  margin: 5px;
+  width: 60%;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 5px;
+}
+
+.contactForm textarea {
+  height: 40%;
+}
+
+.contactForm button {
+  margin-top: 10px;
+  width: 80px;
+  height: 33px;
+  font-size: 11px;
+  font-family: 'Oswald', sans-serif;
+  border: 1px solid #ef4c23;
+  border-radius: 25px;
+  letter-spacing: 2px;
+  background-color: white;
+  color: black;
+  transition: .5s ease-in-out;
+  outline: none;
+  cursor: pointer;
+  z-index: 990;
+}
+
+.contactForm button:hover {
+  background-color: #ef4c23;
+  color: white;
+}
+
+.wrapForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 100%;
+}
