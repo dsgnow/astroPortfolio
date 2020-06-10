@@ -1535,6 +1535,22 @@ main section.projects {
   overflow: hidden;
 }
 
+main section.projects .firstProject {
+  transform: translateX(-100%);
+  transition: .6s;
+}
+
+
+main section.projects .secondProject {
+  transform: translateX(100%);
+  transition: .6s;
+}
+
+main section.projects .secondProject.projectEvenShow,
+main section.projects .firstProject.projectOddShow {
+  transform: translateX(0);
+}
+
 main section.projects .wrapProject {
   position: relative;
   display: flex;

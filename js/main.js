@@ -93,6 +93,14 @@ $(document).on('scroll', function () {
     const $aboutBgcTwink = $('.blackBgcTwinkAbout');
     const $hiImPiotr = $('.imPiotr');
 
+    const $firstProject = $('.firstProject');
+    const firstProjectFromTop = $firstProject.offset().top;
+    const firstProjectHeight = $firstProject.outerHeight();
+
+    const $secondProject = $('.secondProject');
+    const secondProjectFromTop = $secondProject.offset().top;
+    const secondProjectHeight = $secondProject.outerHeight();
+
 
     if (scrollValue > rocketHeight + rocketFromTop - windowHeight - 200) {
         $wrapRocket.addClass("active");
@@ -111,8 +119,14 @@ $(document).on('scroll', function () {
 
         //setTimeout(rocketInSpace, 3000);
         //setTimeout(rocketInSpaceTexts, 3000);
+    }
 
+    if (scrollValue > firstProjectHeight + firstProjectFromTop - windowHeight - 200) {
+        $firstProject.addClass("projectOddShow");
+    }
 
+    if (scrollValue > secondProjectHeight + secondProjectFromTop - windowHeight - 200) {
+        $secondProject.addClass("projectEvenShow");
     }
 
     //clean
