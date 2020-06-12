@@ -101,6 +101,10 @@ $(document).on('scroll', function () {
     const secondProjectFromTop = $secondProject.offset().top;
     const secondProjectHeight = $secondProject.outerHeight();
 
+    const $contactAstro = $('.shoe');
+    const contactAstroFromTop = $contactAstro.offset().top;
+    const contactAstroHeight = $contactAstro.outerHeight();
+
 
     if (scrollValue > rocketHeight + rocketFromTop - windowHeight - 200) {
         $wrapRocket.addClass("active");
@@ -127,6 +131,10 @@ $(document).on('scroll', function () {
 
     if (scrollValue > secondProjectHeight + secondProjectFromTop - windowHeight - 200) {
         $secondProject.addClass("projectEvenShow");
+    }
+
+    if (scrollValue > contactAstroHeight + contactAstroFromTop - windowHeight - 200) {
+        $contactAstro.addClass("opacityOn");
     }
 
     //clean
