@@ -376,7 +376,7 @@ header {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  min-height: 500px;
+  min-height: 300px;
   min-width: 300px;
 }
 
@@ -386,7 +386,7 @@ header {
 
 .animationAstronaut {
   position: relative;
-  top: 56%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
@@ -813,6 +813,7 @@ p {
     width: 150px;
     height: 45px;
     font-size: 18px;
+    margin-top: 20px;
   }
 
   .slideDown {
@@ -1075,10 +1076,11 @@ main section.me {
   main section.me div.about {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-basis: 55%;
     height: 65vh;
+    padding-top: 10px;
     /*background-color: royalblue;*/
   }
 
@@ -1200,12 +1202,22 @@ main section.me {
 
 }
 
+@media (min-width: 360px) and (orientation: portrait) {
+
+  main section.me div.about {
+    padding-top: 20px;
+  }
+
+}
+
 @media (min-width: 768px) and (orientation: portrait) {
+
   main section.me div.about p {
     padding-left: 10%;
     width: 80%;
     font-size: 26px;
   }
+
 
   div.about .skills {
     padding-top: 30px;
@@ -1270,6 +1282,23 @@ main section.me {
 }
 
 @media (min-width: 1024px) and (orientation: portrait) {
+  main section.me div.about {
+    padding-top: 50px;
+  }
+
+  div.about .skills {
+    padding-top: 30px;
+    font-size: 22px;
+    width: 80%;
+  }
+
+
+  main section.me div.about .line {
+    height: 8px;
+    margin: 8px 0;
+    width: 100%;
+  }
+
   main section.me div.about p {
     padding-left: 10%;
     width: 80%;
@@ -1343,11 +1372,10 @@ main section.me {
     flex-basis: 50vh;
     width: 50vw;
     position: relative;
-    background-color: #fff;
   }
 
   div.about .skills {
-    padding-top: 15px;
+    padding: 15px 0;
     font-family: 'Oswald', sans-serif;
     font-size: 8px;
     font-weight: 400;
@@ -1375,17 +1403,17 @@ main section.me {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-35%, -50%);
     height: 60%;
   }
 
   main section.me div.about {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-basis: 60vh;
-    width: 55vw;
+    width: 60vw;
   }
 
   main section.me div.about p {
@@ -1482,16 +1510,16 @@ main section.me {
 
 }
 
-@media (min-width: 800px) and (orientation: landscape) {
+@media (min-width: 1024px) and (orientation: landscape) {
 
   main section.me div.header img.imPiotr {
     height: 70%;
   }
 
   div.about .skills {
-    padding-top: 50px;
+    padding-top: 80px;
     font-size: 14px;
-    width: 80%;
+    width: 50%;
   }
 
 
