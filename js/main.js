@@ -16,7 +16,38 @@ $('.hambPopup a').on('click', function () {
     }, 500)
 })
 
+// clock time //
 
+const endTime = new Date('2020-01-20 12:34:00').getTime();
+
+const spanMo = document.querySelector('span.mo');
+const spanD = document.querySelector('span.d');
+const spanH = document.querySelector('span.h');
+const spanM = document.querySelector('span.m');
+const spanS = document.querySelector('span.s');
+
+setInterval(() => {
+    const nowTime = new Date().getTime();
+    const time = nowTime - endTime;
+
+    const months = Math.floor((nowTime / (1000 * 60 * 60 * 24 * 30.5)) - (endTime / (1000 * 60 * 60 * 24 * 30.5)));
+
+    const days = Math.floor((nowTime / (1000 * 60 * 60 * 24) - endTime / (1000 * 60 * 60 * 24)) % 30.5);
+
+    let hours = Math.floor((nowTime / (1000 * 60 * 60) - endTime / (1000 * 60 * 60)) % 24);
+    hours = Math.abs(hours) < 10 ? `0${hours}` : hours;
+
+    const minutes = Math.floor((nowTime / (1000 * 60) - endTime / (1000 * 60)) % 60);
+
+    let secs = Math.floor((nowTime / 1000 - endTime / 1000) % 60);
+    secs = Math.abs(secs) < 10 ? `0${secs}` : secs;
+
+    spanMo.textContent = Math.abs(months) + ' ms.';
+    spanD.textContent = Math.abs(days) + ' d.';
+    spanH.textContent = Math.abs(hours) + ' h.';
+    spanM.textContent = Math.abs(minutes) + ' m.';
+    spanS.textContent = Math.abs(secs) + ' s.';
+}, 1000)
 
 // change nav visiblity when scroll //
 const $hamburger = $('.hamburger');
@@ -56,6 +87,8 @@ hambButton.addEventListener('click', () => {
 // changes when click ship/cosmos //
 
 $(".buttonBig").click(function () {
+    $(".clock").toggleClass('white');
+    $(".clock").addClass('transitionText');
     $(".journey").toggleClass('white');
     $(".front").toggleClass('white');
     $(".journey").addClass('transitionText');
@@ -69,6 +102,7 @@ $(".buttonBig").click(function () {
     $(".slideDown i").toggleClass('white');
 
     function deleteTextTransition() {
+        $(".clock").removeClass('transitionText');
         $(".journey").removeClass('transitionText');
         $(".front").removeClass('transitionText');
     }
@@ -92,7 +126,12 @@ $(document).on('scroll', function () {
     const $aboutBgcStars = $('.blackBgcStarsAbout');
     const $aboutBgcTwink = $('.blackBgcTwinkAbout');
     const $hiImPiotr = $('.imPiotr');
+    const $skills = $('.skills');
+    const skillsFromTop = $skills.offset().top;
+    const skillsHeight = $skills.outerHeight();
+    const skillsSpans = document.querySelectorAll('.skill');
 
+    // project section //
     const $firstProject = $('.firstProject');
     const firstProjectFromTop = $firstProject.offset().top;
     const firstProjectHeight = $firstProject.outerHeight();
@@ -101,6 +140,7 @@ $(document).on('scroll', function () {
     const secondProjectFromTop = $secondProject.offset().top;
     const secondProjectHeight = $secondProject.outerHeight();
 
+    // contact section //
     const $contactAstro = $('.shoe');
     const contactAstroFromTop = $contactAstro.offset().top;
     const contactAstroHeight = $contactAstro.outerHeight();
@@ -123,6 +163,16 @@ $(document).on('scroll', function () {
 
         //setTimeout(rocketInSpace, 3000);
         //setTimeout(rocketInSpaceTexts, 3000);
+    }
+
+    if (scrollValue > skillsHeight + skillsFromTop - windowHeight) {
+
+        skillsSpans.forEach(function (skill, index) {
+            setTimeout(function () {
+                skill.classList.add("opacityOn");
+            }, index * 500)
+        });
+
     }
 
     if (scrollValue > firstProjectHeight + firstProjectFromTop - windowHeight - 200) {

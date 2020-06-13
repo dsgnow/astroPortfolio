@@ -296,6 +296,24 @@ body {
   }
 }
 
+@keyframes clockFade,
+clockFade2 {
+  0% {
+    opacity: 1;
+  }
+
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
 
 /* HAMBURGER MENU */
 .hambPopup {
@@ -382,6 +400,41 @@ header {
 
 .textArea {
   min-height: 200px;
+  position: relative;
+}
+
+.clock .duration {
+  padding: 5px;
+}
+
+.clock {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  text-align: center;
+  color: black;
+  width: 100%;
+
+}
+
+
+.clock.white {
+  color: white;
+  animation: clockFade 2s;
+}
+
+
+.clock p.duration {
+  display: inline-block;
+  font-size: 8px;
+  margin-bottom: -5px;
+}
+
+
+.clock span {
+  display: inline-block;
+  text-align: center;
+  width: 25px;
+  padding-bottom: 2%;
 }
 
 .animationAstronaut {
@@ -451,7 +504,7 @@ header {
 .front {
   font-family: 'Indie Flower', cursive;
   color: black;
-  font-size: 17px;
+  font-size: 15px;
   white-space: nowrap;
 }
 
@@ -578,7 +631,7 @@ p {
   .front {
     font-family: 'Indie Flower', cursive;
     color: black;
-    font-size: 20px;
+    font-size: 18px;
     white-space: nowrap;
   }
 
@@ -666,7 +719,25 @@ p {
   }
 
   .front {
-    font-size: 40px;
+    font-size: 35px;
+  }
+
+  .clock .duration {
+    padding: 5px;
+  }
+
+  .clock {
+    font-size: 20px;
+  }
+
+  .clock p.duration {
+    font-size: 15px;
+    margin-bottom: -5px;
+  }
+
+  .clock span {
+    width: 50px;
+    padding-bottom: 2%;
   }
 
   button.buttonBig {
@@ -775,7 +846,25 @@ p {
   }
 
   .front {
-    font-size: 50px;
+    font-size: 45px;
+  }
+
+  .clock .duration {
+    padding: 5px;
+  }
+
+  .clock {
+    font-size: 28px;
+  }
+
+  .clock p.duration {
+    font-size: 18px;
+    margin-bottom: -5px;
+  }
+
+  .clock span {
+    width: 70px;
+    padding-bottom: 1%;
   }
 
   button.buttonBig {
@@ -806,7 +895,7 @@ p {
   }
 
   .front {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   button.buttonBig {
@@ -975,7 +1064,25 @@ p {
   }
 
   .front {
-    font-size: 30px;
+    font-size: 26px;
+  }
+
+  .clock .duration {
+    padding: 5px;
+  }
+
+  .clock {
+    font-size: 20px;
+  }
+
+  .clock p.duration {
+    font-size: 15px;
+    margin-bottom: -5px;
+  }
+
+  .clock span {
+    width: 50px;
+    padding-bottom: 2%;
   }
 
   button.buttonBig {
@@ -1004,8 +1111,10 @@ p {
   }
 
   .front {
-    font-size: 35px;
+    font-size: 30px;
   }
+
+
 }
 
 
@@ -1041,6 +1150,18 @@ main section.me {
   transition: 0s !important;
 }
 
+div.about .skills .upper span,
+div.about .skills .lower span {
+  opacity: 0;
+  font-size: 20px;
+  transition: .5s;
+}
+
+div.about .skills .upper span.opacityOn,
+div.about .skills .line.opacityOn,
+div.about .skills .lower span.opacityOn {
+  opacity: 1;
+}
 
 
 @media (orientation: portrait) {
@@ -1225,6 +1346,11 @@ main section.me {
     width: 80%;
   }
 
+  div.about .skills .upper span,
+  div.about .skills .lower span {
+    font-size: 30px;
+  }
+
 
   main section.me div.about .line {
     height: 5px;
@@ -1290,6 +1416,11 @@ main section.me {
     padding-top: 30px;
     font-size: 22px;
     width: 80%;
+  }
+
+  div.about .skills .upper span,
+  div.about .skills .lower span {
+    font-size: 40px;
   }
 
 
@@ -1382,6 +1513,11 @@ main section.me {
     display: flex;
     flex-direction: column;
     width: 80%;
+  }
+
+  div.about .skills .upper span,
+  div.about .skills .lower span {
+    font-size: 20px;
   }
 
   .skills .upper,
@@ -1519,9 +1655,13 @@ main section.me {
   div.about .skills {
     padding-top: 80px;
     font-size: 14px;
-    width: 50%;
+    width: 70%;
   }
 
+  div.about .skills .upper span,
+  div.about .skills .lower span {
+    font-size: 30px;
+  }
 
   main section.me div.about .line {
     height: 4px;
@@ -1589,6 +1729,10 @@ main section.me {
     height: 70%;
   }
 
+  div.about .skills .upper span,
+  div.about .skills .lower span {
+    font-size: 40px;
+  }
 
   main section.me div.about p {
     margin-top: 7%;
