@@ -1504,6 +1504,7 @@ div.about .skills .lower span.opacityOn {
     justify-content: space-around;
     position: relative;
     height: 100vh;
+    min-height: 350px;
   }
 
   main section.me div.header {
@@ -2061,6 +2062,7 @@ main section.projects .wrapProject {
     height: 70%;
     align-content: center;
     margin-top: 10px;
+    min-height: 250px;
   }
 
   .wrapProject .wrapAbout {
@@ -2253,6 +2255,7 @@ main section.contact {
   flex-direction: column;
   height: 100vh;
   width: 100vw;
+  min-height: 250px;
 }
 
 .shoe {
