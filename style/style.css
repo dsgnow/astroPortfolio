@@ -1501,19 +1501,19 @@ div.about .skills .lower span.opacityOn {
   main section.me {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     position: relative;
     height: 100vh;
-    min-height: 350px;
+    min-height: 320px;
   }
 
   main section.me div.header {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-basis: 50vh;
     width: 50vw;
     position: relative;
+    min-height: 50px;
   }
 
   div.about .skills {
@@ -1524,11 +1524,12 @@ div.about .skills .lower span.opacityOn {
     display: flex;
     flex-direction: column;
     width: 80%;
+    min-height: 100px;
   }
 
   div.about .skills .upper span,
   div.about .skills .lower span {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .skills .upper,
@@ -1552,6 +1553,7 @@ div.about .skills .lower span.opacityOn {
     left: 50%;
     transform: translate(-35%, -50%);
     height: 60%;
+    min-height: 100px;
   }
 
   main section.me div.about {
@@ -1561,6 +1563,7 @@ div.about .skills .lower span.opacityOn {
     align-items: center;
     flex-basis: 60vh;
     width: 60vw;
+    min-height: 100px;
   }
 
   main section.me div.about p {
@@ -1657,10 +1660,24 @@ div.about .skills .lower span.opacityOn {
 
 }
 
+@media (min-height: 321px) and (orientation: landscape) {
+
+  div.about .skills .upper span,
+  div.about .skills .lower span {
+    font-size: 20px;
+  }
+}
+
 @media (min-width: 1024px) and (orientation: landscape) {
+
+  main section.me {
+    justify-content: space-around;
+  }
+
 
   main section.me div.header img.imPiotr {
     height: 70%;
+    min-height: 200px;
   }
 
   div.about .skills {
@@ -1782,6 +1799,11 @@ div.about .skills .lower span.opacityOn {
 }
 
 @media (min-width: 1500px) and (orientation: landscape) {
+
+  main section.me div.header {
+    min-height: 350px;
+  }
+
   main section.me div.header img.imPiotr {
     height: 70%;
   }
@@ -2255,7 +2277,7 @@ main section.contact {
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  min-height: 250px;
+  min-height: 320px;
 }
 
 .shoe {
@@ -2305,6 +2327,7 @@ textarea {
   border-radius: 5px;
   border: 1px solid grey;
   padding: 5px;
+  min-width: 150px;
 }
 
 .contactForm textarea {
@@ -2327,6 +2350,7 @@ textarea {
   cursor: pointer;
   z-index: 990;
   animation: shaking 3s linear infinite;
+  min-height: 33px;
 }
 
 
@@ -2400,7 +2424,7 @@ textarea {
   }
 }
 
-@media (min-width: 1024px) and (orientation: landscape) {
+@media (min-width: 1024px) and (min-height: 600px) and (orientation: landscape) {
 
   .contactForm {
     height: 90vh;
@@ -2457,5 +2481,9 @@ footer p {
 
   footer p {
     font-size: 15px;
+  }
+
+  .shoe img {
+    max-height: 600px;
   }
 }
