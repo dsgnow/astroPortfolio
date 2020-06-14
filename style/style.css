@@ -615,9 +615,8 @@ p {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    flex-grow: 0;
     text-align: center;
-    padding: 30px;
+    padding: 30px 30px 0 30px;
     height: 45%;
   }
 
@@ -650,18 +649,19 @@ p {
     outline: none;
     cursor: pointer;
     z-index: 990;
+    min-height: 50px;
   }
 
   .animationAstronaut {
     position: relative;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
     z-index: -3;
     background-color: black;
-    width: 151vw;
-    height: 151vw;
+    width: 121vw;
+    height: 121vw;
     border-radius: 50%;
   }
 
@@ -679,8 +679,8 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 150vw;
-    height: 150vw;
+    width: 120vw;
+    height: 120vw;
     position: absolute;
     z-index: 1002;
     opacity: 1;
@@ -700,7 +700,17 @@ p {
 
 }
 
-@media (min-width: 360px) and (orientation: portrait) {
+@media (min-width: 320px) and (min-height: 534px) and (orientation: portrait) {
+
+  .animationAstronaut {
+    width: 151vw;
+    height: 151vw;
+  }
+
+  .animationAstronaut .circle {
+    width: 150vw;
+    height: 150vw;
+  }
 
   .textArea {
     justify-content: center;
@@ -2118,6 +2128,11 @@ main section.projects .wrapProject {
   main section.projects {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+  }
+
+  .wrapProject {
+    max-width: 1000px;
   }
 
   .wrapProject .projectImg {
