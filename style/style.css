@@ -313,7 +313,10 @@ clockFade2 {
 }
 
 
-
+.wrapper {
+  min-width: 290px;
+  min-height: 500px;
+}
 
 /* HAMBURGER MENU */
 .hambPopup {
@@ -2411,7 +2414,7 @@ textarea {
   }
 
   .shoe img {
-    width: 90%;
+
     bottom: 50%;
     left: 50%;
     transform: translate(-50%, 50%);
@@ -2458,6 +2461,10 @@ textarea {
     font-size: 18px;
   }
 
+  .shoe img {
+    max-height: 600px;
+  }
+
 }
 
 /* FOOTER */
@@ -2483,7 +2490,4 @@ footer p {
     font-size: 15px;
   }
 
-  .shoe img {
-    max-height: 600px;
-  }
 }

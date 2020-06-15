@@ -198,3 +198,76 @@ $(document).on('scroll', function () {
         $wrapRocket.addClass("transformY0");
     }
 })
+
+
+//send email
+
+$(".btn-sendEmail").click(function (e) {
+    e.preventDefault();
+
+    let form_name = $(".form_name").val();
+    form_name = DOMPurify.sanitize(form_name);
+
+    let form_email = $(".form_email").val();
+    form_email = DOMPurify.sanitize(form_email);
+
+    let form_message = $(".form_message").val();
+    form_message = DOMPurify.sanitize(form_message);
+
+
+
+    if (!$(".form_email").val()) {
+        alert("Email is empty.");
+        return false;
+    }
+
+    function validateEmail(email) {
+        let re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
+    const email = $(".form_email").val();
+    if (validateEmail(email)) {
+        console.log("correct format");
+    } else {
+        alert("Email is not correct");
+        return false;
+    }
+
+
+    $.ajax({
+        /* THEN THE AJAX CALL */
+        type: "POST",
+        /* TYPE OF METHOD TO USE TO PASS THE DATA */
+        contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+        url: "gmail.php",
+        /* PAGE WHERE WE WILL PASS THE DATA */
+
+        data: {
+            form_email: form_email,
+            form_name: form_name,
+            form_message: form_message
+        },
+
+        success: function (result) {
+            /* GET THE TO BE RETURNED DATA */
+            console.log(result);
+
+            if (result.replace(/\s/g, '') == "ok") {
+                $(".form_email").val("");
+                $(".form_message").val("");
+                $(".form_name").val("");
+                alert("Success! Message sent. Thank you !");
+
+            } else if (result.replace(/\s/g, '') == "kopiaError") {
+
+                $(".btn-sendEmail").attr("disabled", false);
+
+            } else if (result.replace(/\s/g, '') == "error") {
+                alert("Error. Unable to send message.");
+            }
+
+        }
+    });
+
+});
