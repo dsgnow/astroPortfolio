@@ -25,28 +25,27 @@ require_once('tcpdf.php');
           //try {
 
 
-             $attachment = $pdf->Output('confirmation'.$numerZleceniaNew.'.pdf', 'S');
              $mail->CharSet = 'UTF-8'; 
              
             
-             $mail->setFrom('zamowienia@a5print.pl', 'A5 Print');
-             $mail->Username = "zamowienia@a5print.pl";
-             $mail->Password = "Gadania5";
+             $mail->setFrom('rekrutacjadsgnow@gmail.com');
+             $mail->Username = "rekrutacjadsgnow@gmail.com";
+             $mail->Password = "recrutnow";
 
-             $mail->addAddress('nades90@gmail.com'); /*$emailSender*/
+
+             $mail->addAddress('rekrutacjadsgnow@gmail.com'); /*$emailSender*/
              $mail->Subject = 'Rekrutacja'; /*$name*/
              $mail->Body = 'Wiadomość'; /*$message*/
-             $mail->IsSMTP();
-             $mail->Host = 's37.hekko.pl';
-             $mail->Port = 587;
-             $mail->SMTPAuth = true;
-             $mail->SMTPSecure = 'tls';
+             $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->Port = 587;
+            $mail->SMTPAuth = true;
+            $mail->SMTPSecure = 'tls';
            
              /* Enable SMTP debug output. */
              $mail->SMTPDebug = 0;
 
-             $mail->UsernamePotw = "zamowienia@a5print.pl";
-             $mail->PasswordPotw = "Gadania5";
+           
 
             if($mail->send()) {
             echo "ok";
