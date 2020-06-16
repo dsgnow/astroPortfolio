@@ -7,6 +7,8 @@
   <title>Document</title>
   <link rel="stylesheet" href="style/style.css">
   <script src="https://kit.fontawesome.com/4b11486782.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.7/purify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -102,6 +104,17 @@
           <img class="greyClouds3 greyClouds" src="img/szare3.png" alt="">
         </div>
       </section>
+      <section data-section="mySkills" class="mySkills">
+        <div class="leftWrap">
+          <div class="skillsTextHeader">
+            <h2></h2>
+          </div>
+          <div class="skillsLeftColumn"></div>
+          <div class="skillsRightColumn"></div>
+        </div>
+        <div class="rightWrap">
+        </div>
+      </section>
       <section data-section="portfolio" class="projects">
         <div class="wrapProject">
           <div class="projectImg">
@@ -159,12 +172,12 @@
             <h2>contact <span>me</span>
             </h2>
             <label for="name"></label>
-            <input class="name" placeholder="name" type="text">
+            <input class="name form_name" placeholder="name" type="text">
             <label for="email"></label>
-            <input class="email" placeholder="email" type="text">
+            <input class="email form_email" placeholder="email" type="text">
             <label for="message"></label>
-            <textarea class="message" placeholder="message" type="text"></textarea>
-            <button class="send">send</button>
+            <textarea class="message form_message" placeholder="message" type="text"></textarea>
+            <button class="send btn-sendEmail">send</button>
           </div>
         </div>
         <div class="shoe">
@@ -175,6 +188,15 @@
     <footer>
       <p>Created by: dsgnow | Piotr Stachowicz &copy 2020</p>
     </footer>
+    <div class="overlay">
+    </div>
+    <div class="popUp">
+      <div class="popUpTexts">
+        <p class="popUpText"></p>
+        <p class="popUpTextSmall"></p>
+      </div>
+      <button class="popUpButton">ok</button>
+    </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
   <script src="js/main.js"></script>

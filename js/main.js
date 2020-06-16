@@ -1,5 +1,24 @@
-// animation to section when click menu //
+/* popup overlay */
+const overlay = document.querySelector('.overlay');
+const popUp = document.querySelector('.popUp');
+const popUpButton = document.querySelector('.popUpButton');
+const popUpText = document.querySelector('.popUpText');
+const popUpTextSmall = document.querySelector('.popUpTextSmall');
 
+function showPopup() {
+    popUp.classList.add("showPopup");
+    popUp.classList.remove("hidePopup");
+    overlay.classList.toggle("show");
+}
+
+popUpButton.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    popUp.classList.add("hidePopup");
+    popUp.classList.remove("showPopup");
+    overlay.classList.remove("show");
+})
+
+// animation to section when click menu //
 $('nav a').on('click', function () {
     const goToSection = "[data-section=" + $(this).attr('class') + "]";
     $('body, html').animate({
@@ -198,3 +217,91 @@ $(document).on('scroll', function () {
         $wrapRocket.addClass("transformY0");
     }
 })
+
+
+//send email
+
+$(".btn-sendEmail").click(function (e) {
+    e.preventDefault();
+
+    let form_name = $(".form_name").val();
+    form_name = DOMPurify.sanitize(form_name);
+
+    let form_email = $(".form_email").val();
+    form_email = DOMPurify.sanitize(form_email);
+
+    let form_message = $(".form_message").val();
+    form_message = DOMPurify.sanitize(form_message);
+
+
+
+    if (!$(".form_name").val()) {
+        showPopup();
+        popUpText.textContent = "Name is empty.";
+        popUpTextSmall.textContent = "Please complete the field.";
+        $(".form_name").focus();
+        return false;
+    }
+
+    if (!$(".form_email").val()) {
+        showPopup();
+        popUpText.textContent = "Email is empty.";
+        popUpTextSmall.textContent = "Please complete the field.";
+        $(".form_email").focus();
+        return false;
+    }
+
+    if (!$(".form_message").val()) {
+        showPopup();
+        popUpText.textContent = "Message is empty.";
+        popUpTextSmall.textContent = "Please complete the field.";
+        $(".form_message").focus();
+        return false;
+    }
+
+    function validateEmail(email) {
+        let re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
+    const email = $(".form_email").val();
+    if (validateEmail(email)) {
+        console.log("correct format");
+    } else {
+        showPopup();
+        popUpText.textContent = "Email is not correct.";
+        popUpTextSmall.textContent = "Please correct the field.";
+        $(".form_email").focus();
+        return false;
+    }
+
+
+    $.ajax({
+        type: "POST",
+        contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+        url: "gmail.php",
+
+        data: {
+            form_email: form_email,
+            form_name: form_name,
+            form_message: form_message
+        },
+
+        success: function (result) {
+
+            if (result.replace(/\s/g, '') == "ok") {
+                $(".form_email").val("");
+                $(".form_message").val("");
+                $(".form_name").val("");
+                showPopup();
+                popUpText.textContent = "Success! Message send.";
+
+            } else if (result.replace(/\s/g, '') !== "ok") {
+                showPopup();
+                popUpText.textContent = "Error. Unable to send message.";
+            }
+
+        }
+    });
+
+});
