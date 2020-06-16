@@ -312,6 +312,26 @@ clockFade2 {
   }
 }
 
+@keyframes popUp {
+
+
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes popUpHide {
+
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 100%);
+  }
+}
+
 
 .wrapper {
   min-width: 290px;
@@ -2488,6 +2508,151 @@ footer p {
 
   footer p {
     font-size: 15px;
+  }
+
+}
+
+
+/* overlay popup */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  opacity: .9;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  display: none;
+  transition: .3s;
+}
+
+.overlay.show {
+  display: block;
+  opacity: .9;
+}
+
+.popUp {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  bottom: 0;
+  height: 20vh;
+  width: 100vw;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  background-color: #ef4c23;
+  color: white;
+  z-index: 9999;
+  transform: translate(0, 100%);
+  white-space: pre;
+}
+
+.popUpTexts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 50%;
+
+}
+
+.popUpTextSmall {
+  font-size: 15px;
+}
+
+.popUp.showPopup {
+  animation: popUp 1s;
+  animation-fill-mode: forwards;
+}
+
+.popUp.hidePopup {
+  animation: popUpHide 1s;
+  animation-fill-mode: forwards;
+}
+
+.popUp button {
+  display: block;
+  text-align: center;
+  width: 80px;
+  height: 33px;
+  font-size: 11px;
+  border: 1px solid white;
+  background-color: #ef4c23;
+  color: white;
+  border-radius: 25px;
+  letter-spacing: 2px;
+  transition: .5s ease-in-out;
+  outline: none;
+  cursor: pointer;
+  z-index: 990;
+  min-height: 33px;
+}
+
+.popUp button:hover {
+  border: 1px solid #ef4c23;
+  background-color: white;
+  color: #ef4c23;
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .popUp {
+    height: 18vh;
+    font-size: 30px;
+    justify-content: space-evenly;
+  }
+
+  .popUpTextSmall {
+    font-size: 25px;
+  }
+
+  .popUp button {
+    width: 100px;
+    height: 45px;
+    font-size: 15px;
+    border: 2px solid white;
+  }
+}
+
+@media (orientation: landscape) {
+
+  .popUp {
+    height: 30vh;
+    font-size: 20px;
+  }
+
+  .popUpTextSmall {
+    font-size: 15px;
+  }
+
+  .popUp button {
+    width: 80px;
+    height: 33px;
+    font-size: 11px;
+  }
+
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+
+  .popUp {
+    height: 22vh;
+    font-size: 30px;
+    justify-content: space-evenly;
+  }
+
+  .popUpTextSmall {
+    font-size: 25px;
+  }
+
+  .popUp button {
+    width: 100px;
+    height: 45px;
+    font-size: 15px;
+    border: 2px solid white;
   }
 
 }

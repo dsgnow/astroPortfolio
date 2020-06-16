@@ -1,5 +1,24 @@
-// animation to section when click menu //
+/* popup overlay */
+const overlay = document.querySelector('.overlay');
+const popUp = document.querySelector('.popUp');
+const popUpButton = document.querySelector('.popUpButton');
+const popUpText = document.querySelector('.popUpText');
+const popUpTextSmall = document.querySelector('.popUpTextSmall');
 
+function showPopup() {
+    popUp.classList.add("showPopup");
+    popUp.classList.remove("hidePopup");
+    overlay.classList.toggle("show");
+}
+
+popUpButton.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    popUp.classList.add("hidePopup");
+    popUp.classList.remove("showPopup");
+    overlay.classList.remove("show");
+})
+
+// animation to section when click menu //
 $('nav a').on('click', function () {
     const goToSection = "[data-section=" + $(this).attr('class') + "]";
     $('body, html').animate({
@@ -216,8 +235,27 @@ $(".btn-sendEmail").click(function (e) {
 
 
 
+    if (!$(".form_name").val()) {
+        showPopup();
+        popUpText.textContent = "Name is empty.";
+        popUpTextSmall.textContent = "Please complete the field.";
+        $(".form_name").focus();
+        return false;
+    }
+
     if (!$(".form_email").val()) {
-        alert("Email is empty.");
+        showPopup();
+        popUpText.textContent = "Email is empty.";
+        popUpTextSmall.textContent = "Please complete the field.";
+        $(".form_email").focus();
+        return false;
+    }
+
+    if (!$(".form_message").val()) {
+        showPopup();
+        popUpText.textContent = "Message is empty.";
+        popUpTextSmall.textContent = "Please complete the field.";
+        $(".form_message").focus();
         return false;
     }
 
@@ -230,18 +268,18 @@ $(".btn-sendEmail").click(function (e) {
     if (validateEmail(email)) {
         console.log("correct format");
     } else {
-        alert("Email is not correct");
+        showPopup();
+        popUpText.textContent = "Email is not correct.";
+        popUpTextSmall.textContent = "Please correct the field.";
+        $(".form_email").focus();
         return false;
     }
 
 
     $.ajax({
-        /* THEN THE AJAX CALL */
         type: "POST",
-        /* TYPE OF METHOD TO USE TO PASS THE DATA */
         contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
         url: "gmail.php",
-        /* PAGE WHERE WE WILL PASS THE DATA */
 
         data: {
             form_email: form_email,
@@ -250,21 +288,17 @@ $(".btn-sendEmail").click(function (e) {
         },
 
         success: function (result) {
-            /* GET THE TO BE RETURNED DATA */
-            console.log(result);
 
             if (result.replace(/\s/g, '') == "ok") {
                 $(".form_email").val("");
                 $(".form_message").val("");
                 $(".form_name").val("");
-                alert("Success! Message sent. Thank you !");
+                showPopup();
+                popUpText.textContent = "Success! Message send.";
 
-            } else if (result.replace(/\s/g, '') == "kopiaError") {
-
-                $(".btn-sendEmail").attr("disabled", false);
-
-            } else if (result.replace(/\s/g, '') == "error") {
-                alert("Error. Unable to send message.");
+            } else if (result.replace(/\s/g, '') !== "ok") {
+                showPopup();
+                popUpText.textContent = "Error. Unable to send message.";
             }
 
         }
