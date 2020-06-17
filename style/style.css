@@ -368,7 +368,7 @@ clockFade2 {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   font-size: 35px;
-  height: 15vh;
+  height: 12vh;
   position: relative;
   transition: 0.3s;
 }
@@ -378,7 +378,7 @@ clockFade2 {
   text-decoration: none;
   text-align: center;
   width: 100%;
-  line-height: 15vh;
+  line-height: 12vh;
 }
 
 .hambPopup li:hover {
@@ -1014,7 +1014,7 @@ p {
 
   ul.menu li {
     float: left;
-    width: 25%;
+    width: 20%;
   }
 
   ul.menu a {
@@ -1883,9 +1883,9 @@ main section.mySkills {
 
 .moonSkills {
   position: absolute;
-  width: 100vw;
+  height: 45vh;
   bottom: 0;
-  left: 0;
+  right: 0;
   z-index: -1;
 }
 
@@ -1901,6 +1901,7 @@ main section.mySkills {
   font-weight: 400;
 }
 
+
 .mySkills .skillsTextHeader h2 {
   font-weight: normal;
 }
@@ -1909,23 +1910,19 @@ main section.mySkills {
   color: #ef4c23;
 }
 
-.mySkills .skillsColumn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 40vh;
-}
 
 .mySkills .skillsColumn {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   justify-content: space-around;
   width: 100vw;
+  height: 30vh;
   padding: 0 10px;
 }
+
 
 .skillsColumn .skillInfo {
   display: flex;
@@ -1934,7 +1931,8 @@ main section.mySkills {
   justify-content: space-around;
   flex-basis: 40vw;
   min-width: 100px;
-  height: 40px;
+  max-width: 200px;
+  height: 30px;
   padding: 10px;
   margin: 5px 5px;
   background-color: #ef4c23;
@@ -1942,6 +1940,18 @@ main section.mySkills {
   border-radius: 20px;
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
+  transition: .3s;
+}
+
+.skillsColumn .skillInfo:hover {
+  background-color: white;
+  color: #ef4c23;
+  border: 2px solid #ef4c23;
+  cursor: pointer;
+}
+
+.skillsColumn .skillInfo:hover .vl {
+  border-left: 2px solid #ef4c23;
 }
 
 .skillInfo .vl {
@@ -1959,6 +1969,223 @@ main section.mySkills {
 
 .skillInfo p {
   font-size: 10px;
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+
+  .moonSkills {
+    height: 50vh;
+  }
+
+  .mySkills .skillsTextHeader {
+    font-size: 45px;
+  }
+
+  .mySkills .skillsColumn {
+    width: 100vw;
+    height: 20vh;
+    padding: 0 10px;
+  }
+
+  .skillsColumn .skillInfo {
+    flex-basis: 40vw;
+    min-width: 100px;
+    max-width: 200px;
+    height: 40px;
+    padding: 15px;
+    margin: 10px 10px;
+  }
+
+  .skillInfo .vl {
+    border-left: 1px solid white;
+    height: 20px;
+  }
+
+  .skillInfo .skill i {
+    font-size: 25px;
+  }
+
+  .skillInfo .showMore i {
+    font-size: 15px;
+  }
+
+  .skillInfo p {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+
+  .mySkills .skillsTextHeader {
+    font-size: 60px;
+  }
+
+  .mySkills .skillsColumn {
+    width: 100vw;
+    height: 20vh;
+    padding: 0 20px;
+  }
+
+  .skillsColumn .skillInfo {
+    flex-basis: 50vw;
+    min-width: 100px;
+    max-width: 250px;
+    height: 50px;
+    padding: 20px;
+    margin: 15px 15px;
+  }
+
+  .skillInfo .vl {
+    border-left: 2px solid white;
+    height: 30px;
+  }
+
+  .skillInfo .skill i {
+    font-size: 30px;
+  }
+
+  .skillInfo .showMore i {
+    font-size: 17px;
+  }
+
+  .skillInfo p {
+    font-size: 17px;
+  }
+}
+
+@media (orientation: landscape) {
+
+  .moonSkills {
+    transform-origin: center;
+    transform: rotate(-90deg);
+    position: absolute;
+    height: 55vw;
+    max-width: 70vw;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  main section.mySkills {
+    justify-content: flex-start;
+  }
+
+
+  .mySkills .skillsTextHeader {
+    height: 30vh;
+    width: 60vw;
+    font-size: 20px;
+  }
+
+
+  .mySkills .skillsColumn {
+    width: 60vw;
+    height: 40vh;
+  }
+
+  .skillsColumn .skillInfo {
+
+    height: 30px;
+    flex-basis: 130px;
+    padding: 5px;
+    margin: 5px;
+  }
+}
+
+@media (min-width: 640px) and (orientation: landscape) {
+
+  .moonSkills {
+    height: 50vw;
+    max-width: 70vw;
+  }
+
+
+  .mySkills .skillsTextHeader {
+    height: 30vh;
+    width: 50vw;
+  }
+
+
+  .mySkills .skillsColumn {
+    width: 50vw;
+    height: 50vh;
+  }
+
+  .skillsColumn .skillInfo {
+
+    height: 30px;
+    flex-basis: 130px;
+    padding: 10px;
+    margin: 10px 10px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+
+  .mySkills .skillsTextHeader {
+    font-size: 40px;
+  }
+
+  .mySkills .skillsColumn {
+    padding: 0 10px;
+  }
+
+  .skillsColumn .skillInfo {
+
+    height: 50px;
+    padding: 20px;
+    margin: 10px 10px;
+    flex-basis: 200px;
+  }
+
+  .skillInfo .vl {
+    border-left: 2px solid white;
+    height: 20px;
+  }
+
+  .skillInfo .skill i {
+    font-size: 25px;
+  }
+
+  .skillInfo .showMore i {
+    font-size: 15px;
+  }
+
+  .skillInfo p {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1300px) and (orientation: landscape) {
+
+  .moonSkills {
+    transform-origin: center;
+    transform: rotate(-90deg);
+    position: absolute;
+    height: 90vh;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  .mySkills .skillsTextHeader {
+    width: 50vw;
+    justify-content: center;
+  }
+
+
+  .mySkills .skillsColumn {
+    width: 50vw;
+    height: 30vh;
+    padding: 0 100px;
+    justify-content: center;
+  }
+
+  .mySkills .skillsColumn {
+    max-width: 1000px;
+  }
+
+
 }
 
 
