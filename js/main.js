@@ -150,6 +150,11 @@ $(document).on('scroll', function () {
     const skillsHeight = $skills.outerHeight();
     const skillsSpans = document.querySelectorAll('.skill');
 
+    const $skillInfo = $('.skillInfo');
+    const skillInfoFromTop = $skillInfo.offset().top;
+    const skillInfoHeight = $skillInfo.outerHeight();
+    const skillInfoDivs = document.querySelectorAll('.skillInfo');
+
     // project section //
     const $firstProject = $('.firstProject');
     const firstProjectFromTop = $firstProject.offset().top;
@@ -190,6 +195,16 @@ $(document).on('scroll', function () {
             setTimeout(function () {
                 skill.classList.add("opacityOn");
             }, index * 500)
+        });
+
+    }
+
+    if (scrollValue > skillInfoHeight + skillInfoFromTop - windowHeight) {
+
+        skillInfoDivs.forEach(function (skill, index) {
+            setTimeout(function () {
+                skill.classList.add("opacityOn");
+            }, index * 300)
         });
 
     }

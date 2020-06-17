@@ -1943,6 +1943,15 @@ main section.mySkills {
   transition: .3s;
 }
 
+.skillInfo {
+  /* opacity: 0; */
+  transition: .3s;
+}
+
+.skillInfo.opacityOn {
+  opacity: 1;
+}
+
 .skillsColumn .skillInfo:hover {
   background-color: white;
   color: #ef4c23;
@@ -1969,6 +1978,12 @@ main section.mySkills {
 
 .skillInfo p {
   font-size: 10px;
+}
+
+@media (min-width: 320px) and (orientation: portrait) {
+  .moonSkills {
+    height: 60vh;
+  }
 }
 
 @media (min-width: 768px) and (orientation: portrait) {
@@ -2095,7 +2110,7 @@ main section.mySkills {
 @media (min-width: 640px) and (orientation: landscape) {
 
   .moonSkills {
-    height: 50vw;
+    height: 60vw;
     max-width: 70vw;
   }
 
