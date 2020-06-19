@@ -296,8 +296,22 @@ body {
   }
 }
 
-@keyframes clockFade,
-clockFade2 {
+@keyframes clockFade2 {
+  0% {
+    opacity: 1;
+  }
+
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes clockFade {
   0% {
     opacity: 1;
   }
@@ -314,10 +328,6 @@ clockFade2 {
 
 @keyframes popUp {
 
-  .wrapper {
-    min-width: 290px;
-    min-height: 500px;
-  }
 
   100% {
     transform: translate(0, 0);
@@ -2996,7 +3006,6 @@ footer p {
     font-size: 15px;
   }
 
-  <<<<<<< HEAD=======
 }
 
 
@@ -3142,5 +3151,4 @@ footer p {
     border: 2px solid white;
   }
 
-  >>>>>>>3133ef06e23454c58107516bf52358a84659c3be
 }
