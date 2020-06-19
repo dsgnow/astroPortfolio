@@ -419,13 +419,14 @@ clockFade2 {
 header {
   width: 100vw;
   height: 100vh;
+  max-height: 100vh;
   overflow: hidden;
   min-height: 200px;
   min-width: 200px;
 }
 
 .textArea {
-  min-height: 200px;
+  min-height: 100px;
   position: relative;
 }
 
