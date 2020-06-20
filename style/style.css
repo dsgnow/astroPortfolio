@@ -429,7 +429,6 @@ body {
 header {
   width: 100vw;
   height: 100vh;
-  max-height: 100vh;
   overflow: hidden;
   min-height: 200px;
   min-width: 200px;
@@ -928,6 +927,19 @@ p {
 }
 
 @media (orientation: landscape) {
+
+  .hambPopup {
+    height: 80vh;
+  }
+
+  .hambPopup li {
+    height: 16vh;
+  }
+
+  .hambPopup a {
+    width: 100%;
+    line-height: 16vh;
+  }
 
   .textArea {
     justify-content: center;
