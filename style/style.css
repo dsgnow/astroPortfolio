@@ -468,9 +468,15 @@ body {
 header {
   width: 100vw;
   height: 100vh;
+  max-height: -webkit-fill-available;
   overflow: hidden;
-  min-height: 200px;
   min-width: 200px;
+
+  @supports (-webkit-appearance:none) {
+    .os-android & {
+      min-height: calc(100vh - 56px);
+    }
+  }
 }
 
 .textArea {
