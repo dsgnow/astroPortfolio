@@ -1,3 +1,9 @@
+//listen to the resize event
+window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
 /* popup overlay */
 const overlay = document.querySelector('.overlay');
 const popUp = document.querySelector('.popUp');

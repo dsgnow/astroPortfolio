@@ -467,7 +467,6 @@ body {
 
 header {
   width: 100vw;
-  height: 100%;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
