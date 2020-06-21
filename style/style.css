@@ -470,12 +470,7 @@ header {
   height: 100vh;
   overflow: hidden;
   min-width: 200px;
-
-  @supports (-webkit-appearance:none) {
-    .os-android & {
-      min-height: calc(100vh - 56px);
-    }
-  }
+  min-height: calc(100vh - 56px);
 }
 
 .textArea {
