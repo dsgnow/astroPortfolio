@@ -1640,7 +1640,7 @@ div.about .skills .lower span.opacityOn {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-35%, -50%);
+    transform: translate(-28%, -50%);
     height: 60%;
     min-height: 100px;
   }
