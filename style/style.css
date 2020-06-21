@@ -467,10 +467,13 @@ body {
 
 header {
   width: 100vw;
+  height: 100%;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
   min-width: 200px;
   min-height: calc(100vh - 56px);
+  position: relative;
 }
 
 .textArea {
@@ -614,7 +617,7 @@ button.white:hover {
 
 .slideDown {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   left: 50%;
   transform: translate(-50%, 0);
   font-size: 30px;
