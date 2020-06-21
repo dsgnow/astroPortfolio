@@ -335,13 +335,45 @@ body {
 }
 
 @keyframes popUpHide {
-
   0% {
     transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  99% {
+    transform: translate(0, 100%);
+    opacity: 1;
   }
 
   100% {
-    transform: translate(0, 100%);
+    opacity: 0;
+  }
+}
+
+@keyframes popUpHorizontal {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes popUpHideHorizontal {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  99% {
+    transform: translate(100%, 0);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
@@ -1966,6 +1998,10 @@ main section.mySkills {
   transition: .3s;
 }
 
+.skillInfo p.skillDescription {
+  display: none;
+}
+
 .skillInfo {
   /* opacity: 0; */
   transition: .3s;
@@ -2003,6 +2039,8 @@ main section.mySkills {
   font-size: 10px;
 }
 
+
+
 .skillsPopup {
   position: absolute;
   bottom: 0;
@@ -2014,6 +2052,19 @@ main section.mySkills {
   flex-direction: column;
   text-align: center;
   background-color: #ef4c23;
+  transition: .3s;
+  transform: translate(0, 100%);
+}
+
+
+.skillsPopup.show {
+  animation: popUp 1s alternate;
+  animation-fill-mode: forwards;
+}
+
+.skillsPopup {
+  animation: popUpHide 1s alternate;
+  animation-fill-mode: forwards;
 }
 
 
@@ -2086,10 +2137,10 @@ h2 {
 }
 
 .popUpDescription button {
+  display: block;
   width: 70px;
   height: 30px;
-  line-height: 15px;
-  font-size: 15px;
+  font-size: 13px;
   margin-top: 5px;
   font-family: 'Oswald', sans-serif;
   border: 1px solid white;
@@ -2099,6 +2150,13 @@ h2 {
   transition: .5s ease-in-out;
   cursor: pointer;
   z-index: 990;
+  transition: .5s;
+  letter-spacing: 2px;
+}
+
+.popUpDescription button:hover {
+  background-color: white;
+  color: #ef4c23;
 }
 
 
@@ -2170,8 +2228,7 @@ h2 {
   .popUpDescription button {
     width: 100px;
     height: 40px;
-    line-height: 20px;
-    font-size: 20px;
+    font-size: 17px;
     margin-top: 10px;
     border: 2px solid white;
   }
@@ -2233,8 +2290,7 @@ h2 {
   .popUpDescription button {
     width: 110px;
     height: 50px;
-    line-height: 25px;
-    font-size: 25px;
+    font-size: 20px;
   }
 
 }
@@ -2276,6 +2332,72 @@ h2 {
     padding: 5px;
     margin: 5px;
   }
+
+  .skillsPopup {
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    width: 40vw;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    transform: translate(100%, 0);
+    opacity: 0;
+  }
+
+
+  .skillsPopup.show {
+    animation: popUpHorizontal 1s alternate;
+    animation-fill-mode: forwards;
+  }
+
+  .skillsPopup {
+    animation: popUpHideHorizontal 1s alternate;
+    animation-fill-mode: forwards;
+  }
+
+  .skillsPopup .popUpDescription {
+    width: 40vw;
+  }
+
+  .skillsPopup .wrapTittle {
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 20vh;
+  }
+
+
+  .skillsPopup .wrapTittle h2 {
+    font-size: 30px;
+  }
+
+  .wrapTittle .tittle {
+    height: 10vh;
+    padding: 0 10px;
+  }
+
+  .wrapTittle .levelBorder {
+    height: 13vh;
+    width: 30vw;
+    font-size: 13px;
+  }
+
+  .popUpDescription p {
+    font-size: 11px;
+    max-width: 90%;
+    padding: 20px 0;
+  }
+
+  .popUpDescription button {
+    width: 70px;
+    height: 30px;
+    font-size: 12px;
+    margin-top: 5px;
+    border: 2px solid white;
+    border-radius: 25px;
+  }
+
 }
 
 @media (min-width: 640px) and (orientation: landscape) {
@@ -2304,6 +2426,20 @@ h2 {
     padding: 10px;
     margin: 10px 10px;
   }
+
+  .skillsPopup {
+    width: 50vw;
+  }
+
+
+  .skillsPopup .popUpDescription {
+    width: 50vw;
+  }
+
+  .skillsPopup .wrapTittle {
+    width: 50vw;
+  }
+
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
@@ -2340,6 +2476,31 @@ h2 {
   .skillInfo p {
     font-size: 15px;
   }
+
+  .skillsPopup .wrapTittle .level {
+    font-size: 26px;
+  }
+
+  .skillsPopup .wrapTittle .tittle {
+    font-size: 55px;
+    height: 12vh;
+  }
+
+  .wrapTittle .levelBorder {
+    border-width: 3px;
+  }
+
+  .popUpDescription p {
+    font-size: 22px;
+    margin: 50px 0;
+    max-width: 80%;
+  }
+
+  .popUpDescription button {
+    width: 110px;
+    height: 50px;
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 1300px) and (orientation: landscape) {
@@ -2370,6 +2531,41 @@ h2 {
   .mySkills .skillsColumn {
     max-width: 1000px;
   }
+
+  .skillsPopup .popUpDescription {
+    width: 40vw;
+  }
+
+  .skillsPopup .wrapTittle {
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 17vh;
+  }
+
+
+  .skillsPopup .wrapTittle h2 {
+    font-size: 30px;
+  }
+
+  .wrapTittle .tittle {
+    height: 10vh;
+    padding: 0 10px;
+  }
+
+  .wrapTittle .levelBorder {
+    height: 10vh;
+    width: 20vw;
+  }
+
+  .wrapTittle .levelBorder h3 {
+    z-index: 99;
+  }
+
+  .popUpDescription p {
+    max-width: 70%;
+  }
+
 
 
 }
@@ -3065,7 +3261,6 @@ footer p {
   flex-direction: column;
   justify-content: center;
   flex-basis: 50%;
-
 }
 
 .popUpTextSmall {
@@ -3137,9 +3332,11 @@ footer p {
   }
 
   .popUp button {
-    width: 80px;
-    height: 33px;
+    width: 60px;
+    height: 20px;
+    border-radius: 20px;
     font-size: 11px;
+    margin-bottom: 5px;
   }
 
 }
@@ -3149,7 +3346,7 @@ footer p {
   .popUp {
     height: 22vh;
     font-size: 30px;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
 
   .popUpTextSmall {
@@ -3161,6 +3358,13 @@ footer p {
     height: 45px;
     font-size: 15px;
     border: 2px solid white;
+    margin: 10px;
   }
 
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .popUp button {
+    margin-bottom: 30px;
+  }
 }

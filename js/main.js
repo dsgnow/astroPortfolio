@@ -150,6 +150,7 @@ $(document).on('scroll', function () {
     const skillsHeight = $skills.outerHeight();
     const skillsSpans = document.querySelectorAll('.skill');
 
+    // skills section //
     const $skillInfo = $('.skillInfo');
     const skillInfoFromTop = $skillInfo.offset().top;
     const skillInfoHeight = $skillInfo.outerHeight();
@@ -231,6 +232,33 @@ $(document).on('scroll', function () {
 
         $wrapRocket.addClass("transformY0");
     }
+})
+
+// show popUpSkills on click //
+const skillInfoDivs = document.querySelectorAll('.skillInfo');
+const popUpSkillsDescription = document.querySelector('.skillsPopup');
+const popUpSkillsDscBtn = document.querySelector('.skillsPopupConfirm');
+let showPopUp = false;
+
+skillInfoDivs.forEach(function (skill, index) {
+    skill.addEventListener('click', function () {
+        if (!showPopUp) {
+            popUpSkillsDescription.classList.toggle('show');
+        }
+        const tech = this.querySelector('.tech').textContent;
+        const level = this.querySelector('.level').textContent;
+        const description = this.querySelector('.skillDescription').textContent;
+
+        const popUptech = document.querySelector('.popUpDescription .tittle h2').textContent = tech;
+        const popUplevel = document.querySelector('.popUpDescription .levelBorder span').textContent = level;
+        const popUpdescription = document.querySelector('.popUpDescription p').textContent = description;
+        showPopUp = true;
+    })
+});
+
+popUpSkillsDscBtn.addEventListener('click', function () {
+    popUpSkillsDescription.classList.toggle('show');
+    showPopUp = false;
 })
 
 
