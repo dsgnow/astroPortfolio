@@ -33,7 +33,13 @@
 }
 
 .wrapper {
+  margin: 0 auto;
+  max-width: 2000px;
   overflow: hidden;
+}
+
+.astronautHeader {
+  max-width: 2000px;
 }
 
 body {
@@ -1215,6 +1221,7 @@ main section.me {
   overflow: hidden;
   min-height: 300px;
   min-width: 300px;
+  max-width: 2000px;
 }
 
 .blackBgcTwinkAbout {
@@ -1931,6 +1938,7 @@ main section.mySkills {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+  max-width: 2000px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -2522,6 +2530,7 @@ h2 {
   .mySkills .skillsTextHeader {
     width: 50vw;
     justify-content: center;
+    max-width: 1000px;
   }
 
 
@@ -2579,6 +2588,7 @@ h2 {
 
 main section.projects {
   overflow: hidden;
+  max-width: 2000px;
 }
 
 main section.projects .firstProject {
@@ -2968,7 +2978,7 @@ main section.projects .wrapProject {
   }
 
   .wrapProject .wrapAbout p {
-    font-size: 17px;
+    font-size: 20px;
     line-height: 1;
     margin: 6% 0;
     padding: 0 50px;
