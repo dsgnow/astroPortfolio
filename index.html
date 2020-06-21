@@ -4,7 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Piotr Stachowicz, portfolio.</title>
+  <meta name="description" content="See my journey to the front-end developer.">
+  <meta name='keywords' content='Portfolio, projects, front-end.'>
+  <meta name='robots' content='index,follow'>
+  <link rel="icon" href="img/favicon.ico">
+  <meta name='url' content='https://dsgnow.github.io/astroPortfolio/'>
+  <meta property="og:title" content="Najlepsza kwiaciarnia w Gdańsku" />
+  <meta property="og:description" content="Portfolio project showing my way to a front-end developer" />
+  <meta property="og:type" content="article" />
   <link rel="stylesheet" href="style/style.css">
 </head>
 
@@ -272,12 +281,10 @@
           <div class="wrapForm">
             <h2>contact <span>me</span>
             </h2>
-            <label for="name"></label>
-            <input class="name form_name" placeholder="name" type="text">
-            <label for="email"></label>
-            <input class="email form_email" placeholder="email" type="text">
-            <label for="message"></label>
-            <textarea class="message form_message" placeholder="message" type="text"></textarea>
+            <input type="text" aria-label="name" class="name form_name" id="name" placeholder="name" type="text">
+            <input type="text" aria-label="email" class="email form_email" id="email" placeholder="email" type="text">
+            <textarea type="text" aria-label="message" class="message form_message" id="message" placeholder="message"
+              type="text"></textarea>
             <button class="send btn-sendEmail">send</button>
           </div>
         </div>

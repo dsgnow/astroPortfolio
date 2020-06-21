@@ -383,6 +383,7 @@ body {
   min-height: 500px;
 }
 
+
 /* HAMBURGER MENU */
 .hambPopup {
   display: none;
@@ -2000,6 +2001,7 @@ main section.mySkills {
 
 .skillInfo p.skillDescription {
   display: none;
+  font-size: 20px;
 }
 
 .skillInfo {
@@ -2038,6 +2040,8 @@ main section.mySkills {
 .skillInfo p {
   font-size: 10px;
 }
+
+
 
 
 
