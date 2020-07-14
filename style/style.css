@@ -2591,21 +2591,28 @@ h2 {
 main section.projects {
   overflow: hidden;
   max-width: 2000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-main section.projects .firstProject {
+main section.projects .firstProject,
+main section.projects .no3Project {
   transform: translateX(-100%);
   transition: .6s;
 }
 
 
-main section.projects .secondProject {
+main section.projects .secondProject,
+main section.projects .no4Project {
   transform: translateX(100%);
   transition: .6s;
 }
 
 main section.projects .secondProject.projectEvenShow,
-main section.projects .firstProject.projectOddShow {
+main section.projects .firstProject.projectOddShow,
+main section.projects .no3Project.projectOddShow,
+main section.projects .no4Project.projectEvenShow {
   transform: translateX(0);
 }
 
@@ -2613,11 +2620,10 @@ main section.projects .wrapProject {
   position: relative;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
   height: 100vh;
   min-height: 300px;
   min-width: 300px;
-
+  flex-basis: 100%;
 }
 
 .wrapProject .projectImg {
@@ -2823,6 +2829,11 @@ main section.projects .wrapProject {
 
 
 @media (orientation: landscape) {
+
+  main section.projects .wrapProject {
+    flex-basis: 50%;
+  }
+
   .wrapProject .projectAbout {
     height: 70%;
     align-content: center;

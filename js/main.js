@@ -171,6 +171,14 @@ $(document).on('scroll', function () {
     const secondProjectFromTop = $secondProject.offset().top;
     const secondProjectHeight = $secondProject.outerHeight();
 
+    const $no3Project = $('.no3Project');
+    const no3ProjectFromTop = $no3Project.offset().top;
+    const no3ProjectHeight = $no3Project.outerHeight();
+
+    const $no4Project = $('.no4Project');
+    const no4ProjectFromTop = $no4Project.offset().top;
+    const no4ProjectHeight = $no4Project.outerHeight();
+
     // contact section //
     const $contactAstro = $('.shoe');
     const contactAstroFromTop = $contactAstro.offset().top;
@@ -222,6 +230,14 @@ $(document).on('scroll', function () {
 
     if (scrollValue > secondProjectHeight + secondProjectFromTop - windowHeight - 200) {
         $secondProject.addClass("projectEvenShow");
+    }
+
+    if (scrollValue > no3ProjectHeight + no3ProjectFromTop - windowHeight - 200) {
+        $no3Project.addClass("projectOddShow");
+    }
+
+    if (scrollValue > no4ProjectHeight + no4ProjectFromTop - windowHeight - 200) {
+        $no4Project.addClass("projectEvenShow");
     }
 
     if (scrollValue > contactAstroHeight + contactAstroFromTop - windowHeight - 200) {
