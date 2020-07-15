@@ -874,29 +874,34 @@ p {
   }
 
   .hamburger {
-    width: 160px;
-    height: 70px;
+    width: 130px;
+    height: 60px;
     line-height: 70px;
     background-color: black;
     z-index: 999999999999;
   }
 
   .hamburger p {
-    top: 0;
-    right: 30px;
+    top: -5px;
+    right: 20px;
     line-height: 70px;
     padding: 0 50px;
-    font-size: 23px;
+    font-size: 18px;
   }
 
   .hamburger i {
-    top: -13px;
-    right: 30px;
+    top: -20px;
+    right: 20px;
     line-height: 100px;
     font-size: 40px;
     color: white;
 
   }
+
+  .hambPopup li {
+    font-size: 60px;
+  }
+
 
 }
 
@@ -907,26 +912,7 @@ p {
     height: 100px;
   }
 
-  .hamburger {
-    width: 200px;
-    height: 100px;
-    line-height: 100px;
-    z-index: 999999999999;
-  }
 
-  .hamburger p {
-    top: 10px;
-    right: 50px;
-    line-height: 80px;
-    font-size: 30px;
-  }
-
-  .hamburger i {
-    top: 5px;
-    right: 40px;
-    line-height: 100px;
-    font-size: 50px;
-  }
 
   .journey {
     font-size: 130px;
@@ -1204,6 +1190,7 @@ p {
   }
 
 }
+
 
 @media (min-width: 1350px) and (orientation: landscape) {
   .journey {
