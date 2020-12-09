@@ -2304,7 +2304,7 @@ h2 {
     position: absolute;
     height: 55vw;
     max-width: 70vw;
-    top: 0;
+    top: -5px;
     right: 0;
     z-index: -1;
   }
@@ -2712,6 +2712,12 @@ main section.projects .wrapProject {
 .wrapProject .wrapAbout .buttons button:hover {
   background-color: #ef4c23;
   color: white;
+}
+
+.github--print,
+.live--print,
+.github--prepress {
+  text-decoration: line-through;
 }
 
 .wrapProject .cloudsLeftStatic,

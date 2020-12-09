@@ -370,3 +370,31 @@ $(".btn-sendEmail").click(function (e) {
     });
 
 });
+
+//button redirections//
+
+const btnBarberGit = $('.github--barber');
+const btnBarberLive = $('.live--barber');
+
+btnBarberGit.on('click', function () {
+    window.open('https://github.com/dsgnow/barberShop', '_blank');
+})
+btnBarberLive.on('click', function () {
+    window.open('https://kuzniadzentelmenow.pl', '_blank');
+})
+
+const btnTrenerGit = $('.github--trener');
+const btnTrenerLive = $('.live--trener');
+
+btnTrenerGit.on('click', function () {
+    window.open('https://github.com/dsgnow/gym', '_blank');
+})
+btnTrenerLive.on('click', function () {
+    window.open('https://dsgnow.github.io/gym/', '_blank');
+})
+
+const btnPrepressLive = $('.live--prepress');
+
+btnPrepressLive.on('click', function () {
+    window.open('https://exchange.adobe.com/creativecloud.details.101378.prepress2019.html', '_blank');
+})
