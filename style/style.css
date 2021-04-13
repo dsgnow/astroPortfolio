@@ -2608,8 +2608,7 @@ main section.projects .wrapProject {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  min-height: 300px;
+  min-height: 100vh;
   min-width: 300px;
   flex-basis: 100%;
 }
@@ -2826,6 +2825,8 @@ main section.projects .wrapProject {
 
   main section.projects .wrapProject {
     flex-basis: 50%;
+    height: 100vh;
+    min-height: 600px;
   }
 
   .wrapProject .projectAbout {
